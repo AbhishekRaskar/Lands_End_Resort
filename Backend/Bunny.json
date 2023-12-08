@@ -1,0 +1,468 @@
+[
+    {
+        "name": "Spaghetti Bolognese",
+        "description": "Classic Italian pasta with meat sauce",
+        "price": 15.99,
+        "image": "spaghetti_image.jpg",
+        "ingredients": [
+            "spaghetti",
+            "meat sauce",
+            "parmesan"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Grilled Salmon",
+        "description": "Freshly grilled salmon fillet with lemon butter",
+        "price": 18.5,
+        "image": "salmon_image.jpg",
+        "ingredients": [
+            "salmon",
+            "lemon butter",
+            "herbs"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Vegetarian Pizza",
+        "description": "Delicious pizza with assorted vegetables",
+        "price": 12.99,
+        "image": "vegetarian_pizza_image.jpg",
+        "ingredients": [
+            "bell peppers",
+            "onions",
+            "mushrooms"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Main Dining Hall",
+        "description": "Spacious dining area with a variety of seating options",
+        "price": 0,
+        "image": "main_dining_image.jpg",
+        "capacity": 150,
+        "amenities": [
+            "free Wi-Fi",
+            "live music"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Rooftop Lounge",
+        "description": "Scenic rooftop lounge with beautiful city views",
+        "price": 0,
+        "image": "rooftop_lounge_image.jpg",
+        "capacity": 80,
+        "amenities": [
+            "outdoor seating",
+            "cocktail bar"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Private Banquet Room",
+        "description": "Intimate banquet room for private events",
+        "price": 0,
+        "image": "banquet_room_image.jpg",
+        "capacity": 40,
+        "amenities": [
+            "audio-visual equipment",
+            "personalized service"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Happy Hour",
+        "description": "Enjoy discounted drinks and appetizers",
+        "price": 0,
+        "image": "happy_hour_image.jpg",
+        "valid_days": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+        ],
+        "discount_percentage": 20,
+        "category": "DEALS"
+    },
+    {
+        "name": "Date Night Special",
+        "description": "Special package for a romantic evening",
+        "price": 0,
+        "image": "date_night_special_image.jpg",
+        "valid_days": [
+            "Saturday",
+            "Sunday"
+        ],
+        "includes": [
+            "wine bottle",
+            "dessert"
+        ],
+        "category": "DEALS"
+    },
+    {
+        "name": "Lunch Combo",
+        "description": "Affordable combo meals for lunchtime",
+        "price": 0,
+        "image": "lunch_combo_image.jpg",
+        "valid_days": [
+            "Monday",
+            "Tuesday",
+            "Thursday"
+        ],
+        "includes": [
+            "entree",
+            "side",
+            "drink"
+        ],
+        "category": "DEALS"
+    },
+    {
+        "name": "Chef's Special Tasting Menu",
+        "description": "Indulge in a curated tasting experience by our chef",
+        "price": 45.99,
+        "image": "chefs_special_image.jpg",
+        "courses": [
+            "appetizer",
+            "main course",
+            "dessert"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Seafood Extravaganza",
+        "description": "A feast of the finest seafood delicacies",
+        "price": 55.5,
+        "image": "seafood_extravaganza_image.jpg",
+        "includes": [
+            "lobster",
+            "shrimp",
+            "oysters"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetarian Delight",
+        "description": "A delightful selection of vegetarian dishes",
+        "price": 40.99,
+        "image": "vegetarian_delight_image.jpg",
+        "courses": [
+            "soup",
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Live Jazz Night",
+        "description": "Groove to the live jazz tunes under the stars",
+        "price": 0,
+        "image": "live_jazz_night_image.jpg",
+        "date": "2023-05-20",
+        "time": "19:00",
+        "location": "Rooftop Lounge",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Wine Tasting Evening",
+        "description": "Savor exquisite wines in a sophisticated setting",
+        "price": 0,
+        "image": "wine_tasting_image.jpg",
+        "date": "2023-06-10",
+        "time": "18:30",
+        "location": "Wine Cellar",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Family Sunday Brunch",
+        "description": "A family-friendly brunch with a variety of dishes",
+        "price": 0,
+        "image": "sunday_brunch_image.jpg",
+        "date": "2023-04-30",
+        "time": "11:30",
+        "location": "Main Dining Hall",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Chicken Alfredo",
+        "description": "Creamy Alfredo sauce with grilled chicken over fettuccine",
+        "price": 17.99,
+        "image": "chicken_alfredo_image.jpg",
+        "ingredients": [
+            "fettuccine",
+            "Alfredo sauce",
+            "grilled chicken"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Tandoori Shrimp Skewers",
+        "description": "Marinated shrimp skewers grilled to perfection",
+        "price": 21.5,
+        "image": "tandoori_shrimp_image.jpg",
+        "ingredients": [
+            "shrimp",
+            "Tandoori marinade",
+            "bell peppers"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Margherita Pizza",
+        "description": "Classic pizza with fresh tomatoes, mozzarella, and basil",
+        "price": 14.99,
+        "image": "margherita_pizza_image.jpg",
+        "ingredients": [
+            "tomatoes",
+            "mozzarella",
+            "basil"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "VIP Lounge",
+        "description": "Exclusive lounge with premium services and private seating",
+        "price": 0,
+        "image": "vip_lounge_image.jpg",
+        "capacity": 20,
+        "amenities": [
+            "personal concierge",
+            "private bar"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Garden Terrace",
+        "description": "Charming terrace surrounded by lush greenery",
+        "price": 0,
+        "image": "garden_terrace_image.jpg",
+        "capacity": 50,
+        "amenities": [
+            "open-air seating",
+            "botanical decor"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Executive Boardroom",
+        "description": "Sophisticated boardroom for corporate meetings",
+        "price": 0,
+        "image": "boardroom_image.jpg",
+        "capacity": 12,
+        "amenities": [
+            "video conferencing",
+            "catering options"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Thirsty Thursdays",
+        "description": "Quench your thirst with discounted drinks",
+        "price": 0,
+        "image": "thirsty_thursdays_image.jpg",
+        "valid_days": [
+            "Thursday"
+        ],
+        "discount_percentage": 15,
+        "category": "DEALS"
+    },
+    {
+        "name": "Weekend Getaway Package",
+        "description": "Escape for the weekend with a special hotel and dining package",
+        "price": 199.99,
+        "image": "weekend_getaway_image.jpg",
+        "valid_days": [
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "includes": [
+            "one-night stay",
+            "three-course dinner"
+        ],
+        "category": "DEALS"
+    },
+    {
+        "name": "Sushi Extravaganza",
+        "description": "A feast of the finest sushi and sashimi",
+        "price": 49.99,
+        "image": "sushi_extravaganza_image.jpg",
+        "includes": [
+            "sushi rolls",
+            "sashimi platter",
+            "wasabi"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Whiskey Tasting Night",
+        "description": "Explore a variety of premium whiskeys with expert guidance",
+        "price": 0,
+        "image": "whiskey_tasting_image.jpg",
+        "date": "2023-07-15",
+        "time": "20:00",
+        "location": "Whiskey Lounge",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Summer BBQ Fiesta",
+        "description": "Celebrate summer with a sizzling barbecue party",
+        "price": 0,
+        "image": "summer_bbq_image.jpg",
+        "date": "2023-08-05",
+        "time": "17:30",
+        "location": "Garden Terrace",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Cocktail Mixology Class",
+        "description": "Learn to craft signature cocktails with our expert mixologists",
+        "price": 25.99,
+        "image": "cocktail_mixology_image.jpg",
+        "date": "2023-09-02",
+        "time": "19:00",
+        "location": "VIP Lounge",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Mushroom Risotto",
+        "description": "Creamy Italian risotto with sautéed mushrooms",
+        "price": 16.99,
+        "image": "mushroom_risotto_image.jpg",
+        "ingredients": [
+            "Arborio rice",
+            "mushrooms",
+            "parmesan cheese"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "BBQ Pulled Pork Sandwich",
+        "description": "Slow-cooked pulled pork in tangy BBQ sauce on a toasted bun",
+        "price": 14.5,
+        "image": "bbq_pulled_pork_image.jpg",
+        "ingredients": [
+            "pulled pork",
+            "BBQ sauce",
+            "coleslaw"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Caprese Salad",
+        "description": "Fresh salad with tomatoes, mozzarella, and balsamic glaze",
+        "price": 10.99,
+        "image": "caprese_salad_image.jpg",
+        "ingredients": [
+            "tomatoes",
+            "mozzarella",
+            "balsamic glaze"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Sake Lounge",
+        "description": "Elegant lounge offering a wide selection of sake",
+        "price": 0,
+        "image": "sake_lounge_image.jpg",
+        "capacity": 30,
+        "amenities": [
+            "sake tasting flights",
+            "sushi bar"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "High Tea Experience",
+        "description": "Indulge in a delightful afternoon tea with a variety of treats",
+        "price": 28.99,
+        "image": "high_tea_image.jpg",
+        "capacity": 40,
+        "amenities": [
+            "assorted teas",
+            "pastries",
+            "finger sandwiches"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Game Night Tuesdays",
+        "description": "Unleash your competitive spirit with board games and trivia",
+        "price": 0,
+        "image": "game_night_image.jpg",
+        "valid_days": [
+            "Tuesday"
+        ],
+        "discount_percentage": 15,
+        "category": "DEALS"
+    },
+    {
+        "name": "Spa and Dinner Package",
+        "description": "Pamper yourself with a spa session followed by a gourmet dinner",
+        "price": 149.99,
+        "image": "spa_dinner_package_image.jpg",
+        "valid_days": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+        ],
+        "includes": [
+            "60-minute spa treatment",
+            "three-course dinner"
+        ],
+        "category": "DEALS"
+    },
+    {
+        "name": "Vegan Delight",
+        "description": "A delectable array of vegan dishes",
+        "price": 42.99,
+        "image": "vegan_delight_image.jpg",
+        "courses": [
+            "quinoa salad",
+            "stuffed peppers",
+            "chocolate avocado mousse"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Rum Tasting Cruise",
+        "description": "Set sail for an evening of rum tasting on a scenic cruise",
+        "price": 0,
+        "image": "rum_tasting_cruise_image.jpg",
+        "date": "2023-10-15",
+        "time": "18:00",
+        "location": "Onboard Cruise Ship",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Halloween Masquerade Ball",
+        "description": "Celebrate Halloween with a mysterious masquerade ball",
+        "price": 30.99,
+        "image": "halloween_ball_image.jpg",
+        "date": "2023-10-28",
+        "time": "20:00",
+        "location": "Grand Ballroom",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Holiday Feast Extravaganza",
+        "description": "A festive feast with holiday-inspired dishes",
+        "price": 65.5,
+        "image": "holiday_feast_image.jpg",
+        "includes": [
+            "roast turkey",
+            "cranberry sauce",
+            "pumpkin pie"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Live Acoustic Night",
+        "description": "Relax to the soothing tunes of live acoustic performances",
+        "price": 0,
+        "image": "live_acoustic_night_image.jpg",
+        "date": "2023-11-18",
+        "time": "19:30",
+        "location": "Garden Terrace",
+        "category": "EVENTS"
+    }
+]
