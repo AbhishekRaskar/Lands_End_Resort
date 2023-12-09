@@ -3,7 +3,7 @@
         "name": "Spaghetti Bolognese",
         "description": "Classic Italian pasta with meat sauce",
         "price": 15.99,
-        "image": "spaghetti_image.jpg",
+        "image": "https://loremflickr.com/640/480/food",
         "ingredients": [
             "spaghetti",
             "meat sauce",
@@ -12,33 +12,339 @@
         "category": "MENU"
     },
     {
-        "name": "Grilled Salmon",
-        "description": "Freshly grilled salmon fillet with lemon butter",
-        "price": 18.5,
-        "image": "salmon_image.jpg",
+        "name": "Margherita Pizza",
+        "description": "Traditional pizza with tomato, mozzarella, and basil",
+        "price": 12.99,
+        "image": "https://loremflickr.com/640/480/food",
         "ingredients": [
-            "salmon",
-            "lemon butter",
+            "dough",
+            "tomato sauce",
+            "mozzarella",
+            "basil"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Caesar Salad",
+        "description": "Fresh salad with romaine lettuce, croutons, and Caesar dressing",
+        "price": 9.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "romaine lettuce",
+            "croutons",
+            "Caesar dressing"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Chicken Alfredo Pasta",
+        "description": "Creamy pasta with grilled chicken and Alfredo sauce",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "fettuccine",
+            "grilled chicken",
+            "Alfredo sauce"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Vegetarian Sushi Roll",
+        "description": "Assorted vegetables rolled in sushi rice and seaweed",
+        "price": 11.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "sushi rice",
+            "seaweed",
+            "assorted vegetables"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Beef Tacos",
+        "description": "Tacos with seasoned beef, lettuce, and cheese",
+        "price": 10.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "soft tortillas",
+            "seasoned beef",
+            "lettuce",
+            "cheese"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Mushroom Risotto",
+        "description": "Creamy risotto with mushrooms and Parmesan cheese",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "arborio rice",
+            "mushrooms",
+            "Parmesan cheese"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Chicken Teriyaki Bowl",
+        "description": "Grilled chicken with teriyaki sauce served over rice",
+        "price": 12.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "grilled chicken",
+            "teriyaki sauce",
+            "rice"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Caprese Sandwich",
+        "description": "Sandwich with fresh mozzarella, tomatoes, and basil",
+        "price": 9.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "ciabatta bread",
+            "mozzarella",
+            "tomatoes",
+            "basil"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Shrimp Scampi",
+        "description": "Garlic butter shrimp served over linguine",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "shrimp",
+            "garlic butter",
+            "linguine"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Vegetable Stir-Fry",
+        "description": "Assorted vegetables stir-fried in a savory sauce",
+        "price": 11.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "broccoli",
+            "carrots",
+            "bell peppers",
+            "soy sauce"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "BBQ Pulled Pork Sandwich",
+        "description": "Pulled pork with BBQ sauce on a bun",
+        "price": 10.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "pulled pork",
+            "BBQ sauce",
+            "bun"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Greek Salad",
+        "description": "Salad with feta cheese, olives, and Greek dressing",
+        "price": 9.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "lettuce",
+            "feta cheese",
+            "olives",
+            "Greek dressing"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Beef and Broccoli",
+        "description": "Stir-fried beef with broccoli in a savory sauce",
+        "price": 12.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "beef",
+            "broccoli",
+            "soy sauce"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Seafood Paella",
+        "description": "Spanish rice dish with assorted seafood",
+        "price": 16.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "rice",
+            "shrimp",
+            "mussels",
+            "squid"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Vegetarian Enchiladas",
+        "description": "Enchiladas filled with beans, cheese, and vegetables",
+        "price": 11.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "tortillas",
+            "beans",
+            "cheese",
+            "vegetables"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Lemon Herb Roasted Chicken",
+        "description": "Roasted chicken seasoned with lemon and herbs",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "whole chicken",
+            "lemon",
             "herbs"
         ],
         "category": "MENU"
     },
     {
-        "name": "Vegetarian Pizza",
-        "description": "Delicious pizza with assorted vegetables",
+        "name": "Vegetable Lasagna",
+        "description": "Layered lasagna with a variety of vegetables and cheese",
         "price": 12.99,
-        "image": "vegetarian_pizza_image.jpg",
+        "image": "https://loremflickr.com/640/480/food",
         "ingredients": [
-            "bell peppers",
-            "onions",
-            "mushrooms"
+            "lasagna noodles",
+            "tomato sauce",
+            "vegetables",
+            "cheese"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Teriyaki Salmon",
+        "description": "Grilled salmon with teriyaki glaze",
+        "price": 15.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "salmon",
+            "teriyaki glaze"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Quinoa Bowl",
+        "description": "Bowl with quinoa, mixed vegetables, and tahini dressing",
+        "price": 10.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "quinoa",
+            "mixed vegetables",
+            "tahini dressing"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Penne alla Vodka",
+        "description": "Penne pasta in a creamy vodka-infused tomato sauce",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "penne pasta",
+            "vodka sauce",
+            "tomatoes"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Tofu Stir-Fry",
+        "description": "Stir-fried tofu with vegetables in a soy ginger sauce",
+        "price": 11.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "tofu",
+            "vegetables",
+            "soy ginger sauce"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Hawaiian Poke Bowl",
+        "description": "Bowl with sushi rice, fresh fish, and tropical toppings",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "sushi rice",
+            "fresh fish",
+            "tropical toppings"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Vegetable Curry",
+        "description": "Curry with mixed vegetables and aromatic spices",
+        "price": 12.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "mixed vegetables",
+            "curry sauce",
+            "spices"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Mango Sticky Rice",
+        "description": "Sweet sticky rice topped with fresh mango slices",
+        "price": 8.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "sticky rice",
+            "mango"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Eggplant Parmesan",
+        "description": "Baked eggplant with marinara sauce and melted cheese",
+        "price": 11.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "eggplant",
+            "marinara sauce",
+            "cheese"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Teriyaki Beef Skewers",
+        "description": "Grilled beef skewers with teriyaki glaze",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "beef",
+            "teriyaki glaze"
+        ],
+        "category": "MENU"
+    },
+    {
+        "name": "Chicken Quesadilla",
+        "description": "Quesadilla with grilled chicken, cheese, and vegetables",
+        "price": 10.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "ingredients": [
+            "tortillas",
+            "grilled chicken",
+            "cheese",
+            "vegetables"
         ],
         "category": "MENU"
     },
     {
         "name": "Main Dining Hall",
         "description": "Spacious dining area with a variety of seating options",
-        "price": 0,
+        "price": 50,
         "image": "main_dining_image.jpg",
         "capacity": 150,
         "amenities": [
@@ -48,34 +354,298 @@
         "category": "DINING"
     },
     {
-        "name": "Rooftop Lounge",
-        "description": "Scenic rooftop lounge with beautiful city views",
-        "price": 0,
-        "image": "rooftop_lounge_image.jpg",
-        "capacity": 80,
+        "name": "Cozy Corner Cafe",
+        "description": "Quaint cafe with comfortable seating and a relaxed atmosphere",
+        "price": 12.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 40,
         "amenities": [
-            "outdoor seating",
-            "cocktail bar"
+            "coffee bar",
+            "free Wi-Fi"
         ],
         "category": "DINING"
     },
     {
-        "name": "Private Banquet Room",
-        "description": "Intimate banquet room for private events",
-        "price": 0,
-        "image": "banquet_room_image.jpg",
+        "name": "Rooftop Bistro",
+        "description": "Elegant bistro with a rooftop view and fine dining options",
+        "price": 18.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 50,
+        "amenities": [
+            "scenic view",
+            "live jazz"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Family Pizzeria",
+        "description": "Family-friendly pizzeria with a variety of pizza options",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 60,
+        "amenities": [
+            "arcade games",
+            "kid-friendly"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Seafood Shack",
+        "description": "Casual seafood shack with fresh catches and outdoor seating",
+        "price": 16.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 30,
+        "amenities": [
+            "ocean view",
+            "outdoor seating"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Vegan Delight",
+        "description": "Plant-based restaurant with a focus on delicious vegan dishes",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 45,
+        "amenities": [
+            "vegan options",
+            "organic ingredients"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Sushi Haven",
+        "description": "Sushi bar with a diverse selection of fresh sushi rolls",
+        "price": 20.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 25,
+        "amenities": [
+            "sushi bar",
+            "private booths"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Mexican Fiesta",
+        "description": "Lively Mexican restaurant with vibrant decor and spicy flavors",
+        "price": 15.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 55,
+        "amenities": [
+            "fiesta atmosphere",
+            "margarita bar"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Burger Joint",
+        "description": "Classic American diner with a focus on juicy burgers",
+        "price": 11.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 35,
+        "amenities": [
+            "burger bar",
+            "retro vibes"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Mediterranean Oasis",
+        "description": "Mediterranean restaurant with a serene atmosphere and flavorful dishes",
+        "price": 17.99,
+        "image": "https://loremflickr.com/640/480/food",
         "capacity": 40,
         "amenities": [
-            "audio-visual equipment",
-            "personalized service"
+            "olive garden",
+            "live acoustic"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Thai Spice House",
+        "description": "Authentic Thai cuisine with a variety of spicy and flavorful dishes",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 50,
+        "amenities": [
+            "spice level options",
+            "cultural decor"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Pasta Paradise",
+        "description": "Italian pasta restaurant with a wide selection of pasta dishes",
+        "price": 16.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 30,
+        "amenities": [
+            "pasta bar",
+            "wine pairing"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Gourmet Grilled Cheese",
+        "description": "Specialty grilled cheese sandwiches with gourmet ingredients",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 25,
+        "amenities": [
+            "artisanal cheeses",
+            "craft beer"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Farm-to-Table Cafe",
+        "description": "Cafe sourcing fresh ingredients directly from local farms",
+        "price": 19.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 35,
+        "amenities": [
+            "farm-fresh",
+            "seasonal menu"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Hot Pot Haven",
+        "description": "Interactive hot pot dining experience with a variety of broths",
+        "price": 18.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 20,
+        "amenities": [
+            "hot pot station",
+            "family-style dining"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Brazilian Grill",
+        "description": "Brazilian churrascaria with a selection of grilled meats",
+        "price": 21.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 40,
+        "amenities": [
+            "rodizio-style",
+            "live entertainment"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Creperie Delight",
+        "description": "Charming creperie offering sweet and savory crepes",
+        "price": 12.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 30,
+        "amenities": [
+            "crepe bar",
+            "cozy ambiance"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Steakhouse Supreme",
+        "description": "Upscale steakhouse with prime cuts and a sophisticated setting",
+        "price": 24.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 50,
+        "amenities": [
+            "prime steaks",
+            "wine cellar"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Dim Sum Delights",
+        "description": "Dim sum restaurant offering a variety of bite-sized delights",
+        "price": 15.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 25,
+        "amenities": [
+            "dim sum cart",
+            "traditional tea service"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Cajun Kitchen",
+        "description": "Cajun-inspired kitchen with bold flavors and hearty dishes",
+        "price": 17.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 40,
+        "amenities": [
+            "spicy cuisine",
+            "live blues"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Noodle House",
+        "description": "Asian noodle house serving a variety of noodle dishes",
+        "price": 13.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 35,
+        "amenities": [
+            "noodle bar",
+            "karaoke nights"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Southern Comfort Kitchen",
+        "description": "Comfort food kitchen with a Southern twist and warm hospitality",
+        "price": 16.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 45,
+        "amenities": [
+            "homestyle cooking",
+            "sweet tea"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Dessert Delights",
+        "description": "Dessert cafe offering a tempting array of sweet treats",
+        "price": 9.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 20,
+        "amenities": [
+            "dessert bar",
+            "artisanal pastries"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Indian Spice House",
+        "description": "Indian restaurant with aromatic spices and traditional flavors",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 30,
+        "amenities": [
+            "curry dishes",
+            "naan bread"
+        ],
+        "category": "DINING"
+    },
+    {
+        "name": "Wine Bar Elegance",
+        "description": "Elegant wine bar with an extensive selection of fine wines",
+        "price": 20.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "capacity": 25,
+        "amenities": [
+            "wine flights",
+            "charcuterie boards"
         ],
         "category": "DINING"
     },
     {
         "name": "Happy Hour",
         "description": "Enjoy discounted drinks and appetizers",
-        "price": 0,
-        "image": "happy_hour_image.jpg",
+        "price": 30,
+        "image": "https://loremflickr.com/640/480/food",
         "valid_days": [
             "Monday",
             "Wednesday",
@@ -85,66 +655,289 @@
         "category": "DEALS"
     },
     {
-        "name": "Date Night Special",
-        "description": "Special package for a romantic evening",
-        "price": 0,
-        "image": "date_night_special_image.jpg",
+        "name": "Weekend Happy Hour",
+        "description": "Extended happy hour on weekends",
+        "price": 28,
+        "image": "https://loremflickr.com/640/480/food",
         "valid_days": [
             "Saturday",
             "Sunday"
         ],
-        "includes": [
-            "wine bottle",
-            "dessert"
-        ],
+        "discount_percentage": 15,
         "category": "DEALS"
     },
     {
-        "name": "Lunch Combo",
-        "description": "Affordable combo meals for lunchtime",
-        "price": 0,
-        "image": "lunch_combo_image.jpg",
+        "name": "Late-Night Happy Hour",
+        "description": "Discounts on selected items during late-night hours",
+        "price": 25,
+        "image": "https://loremflickr.com/640/480/food",
         "valid_days": [
-            "Monday",
+            "Thursday",
+            "Friday"
+        ],
+        "discount_percentage": 18,
+        "category": "DEALS"
+    },
+    {
+        "name": "Happy Hour Specials",
+        "description": "Special deals on cocktails and appetizers",
+        "price": 29,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
             "Tuesday",
             "Thursday"
         ],
-        "includes": [
-            "entree",
-            "side",
-            "drink"
-        ],
+        "discount_percentage": 22,
         "category": "DEALS"
     },
     {
-        "name": "Chef's Special Tasting Menu",
-        "description": "Indulge in a curated tasting experience by our chef",
-        "price": 45.99,
-        "image": "chefs_special_image.jpg",
-        "courses": [
-            "appetizer",
-            "main course",
-            "dessert"
+        "name": "Fiesta Friday",
+        "description": "Celebrate the start of the weekend with great offers",
+        "price": 27,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Friday"
         ],
-        "category": "SPECIALS"
+        "discount_percentage": 17,
+        "category": "DEALS"
     },
     {
-        "name": "Seafood Extravaganza",
-        "description": "A feast of the finest seafood delicacies",
-        "price": 55.5,
-        "image": "seafood_extravaganza_image.jpg",
-        "includes": [
-            "lobster",
-            "shrimp",
-            "oysters"
+        "name": "Sunday Sips",
+        "description": "Relax and enjoy discounted drinks on Sunday evenings",
+        "price": 26,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Sunday"
         ],
-        "category": "SPECIALS"
+        "discount_percentage": 19,
+        "category": "DEALS"
+    },
+    {
+        "name": "Midweek Mixer",
+        "description": "Mix and mingle with special drink prices on Wednesdays",
+        "price": 24,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Wednesday"
+        ],
+        "discount_percentage": 21,
+        "category": "DEALS"
+    },
+    {
+        "name": "Tropical Tuesday",
+        "description": "Escape with tropical-themed drinks every Tuesday",
+        "price": 23,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Tuesday"
+        ],
+        "discount_percentage": 16,
+        "category": "DEALS"
+    },
+    {
+        "name": "Monday Mixer",
+        "description": "Start the week right with discounted drinks",
+        "price": 22,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Monday"
+        ],
+        "discount_percentage": 18,
+        "category": "DEALS"
+    },
+    {
+        "name": "Thursday Thrills",
+        "description": "Thrilling discounts to get you through the week",
+        "price": 31,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Thursday"
+        ],
+        "discount_percentage": 20,
+        "category": "DEALS"
+    },
+    {
+        "name": "Saturday Social",
+        "description": "Socialize with friends and enjoy special Saturday prices",
+        "price": 29,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Saturday"
+        ],
+        "discount_percentage": 15,
+        "category": "DEALS"
+    },
+    {
+        "name": "Midnight Munchies",
+        "description": "Late-night deals on appetizers for the night owls",
+        "price": 28,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Friday",
+            "Saturday"
+        ],
+        "discount_percentage": 18,
+        "category": "DEALS"
+    },
+    {
+        "name": "Wine Down Wednesday",
+        "description": "Relax with discounted wine every Wednesday",
+        "price": 26,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Wednesday"
+        ],
+        "discount_percentage": 22,
+        "category": "DEALS"
+    },
+    {
+        "name": "Cocktail Carnival",
+        "description": "A carnival of cocktail specials for a lively Thursday",
+        "price": 25,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Thursday"
+        ],
+        "discount_percentage": 17,
+        "category": "DEALS"
+    },
+    {
+        "name": "Fiery Friday",
+        "description": "Spice up your Friday night with fiery drink deals",
+        "price": 27,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Friday"
+        ],
+        "discount_percentage": 19,
+        "category": "DEALS"
+    },
+    {
+        "name": "Sippin' Saturday",
+        "description": "Sip away the stress with Saturday specials",
+        "price": 30,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Saturday"
+        ],
+        "discount_percentage": 20,
+        "category": "DEALS"
+    },
+    {
+        "name": "Sunset Sunday",
+        "description": "Watch the sunset with discounted drinks on Sunday",
+        "price": 26,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Sunday"
+        ],
+        "discount_percentage": 15,
+        "category": "DEALS"
+    },
+    {
+        "name": "Margarita Monday",
+        "description": "Celebrate Mondays with special prices on margaritas",
+        "price": 24,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Monday"
+        ],
+        "discount_percentage": 18,
+        "category": "DEALS"
+    },
+    {
+        "name": "Tequila Tuesday",
+        "description": "Tequila-themed discounts every Tuesday night",
+        "price": 23,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Tuesday"
+        ],
+        "discount_percentage": 21,
+        "category": "DEALS"
+    },
+    {
+        "name": "Wine and Dine Wednesday",
+        "description": "Wine and dine with discounted prices on Wednesday",
+        "price": 28,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Wednesday"
+        ],
+        "discount_percentage": 16,
+        "category": "DEALS"
+    },
+    {
+        "name": "Thirsty Thursday",
+        "description": "Quench your thirst with special Thursday deals",
+        "price": 29,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Thursday"
+        ],
+        "discount_percentage": 19,
+        "category": "DEALS"
+    },
+    {
+        "name": "Friday Flavors",
+        "description": "Explore new flavors with discounted Friday drinks",
+        "price": 27,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Friday"
+        ],
+        "discount_percentage": 17,
+        "category": "DEALS"
+    },
+    {
+        "name": "Sunny Saturday",
+        "description": "Sunny day specials to brighten up your Saturday",
+        "price": 25,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Saturday"
+        ],
+        "discount_percentage": 22,
+        "category": "DEALS"
+    },
+    {
+        "name": "Sunday Serenity",
+        "description": "Find serenity with Sunday drink discounts",
+        "price": 26,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Sunday"
+        ],
+        "discount_percentage": 20,
+        "category": "DEALS"
+    },
+    {
+        "name": "Monday Madness",
+        "description": "Kick off the week with Monday madness specials",
+        "price": 24,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Monday"
+        ],
+        "discount_percentage": 15,
+        "category": "DEALS"
+    },
+    {
+        "name": "Terrific Tuesday",
+        "description": "Make Tuesday terrific with special drink prices",
+        "price": 23,
+        "image": "https://loremflickr.com/640/480/food",
+        "valid_days": [
+            "Tuesday"
+        ],
+        "discount_percentage": 18,
+        "category": "DEALS"
     },
     {
         "name": "Vegetarian Delight",
         "description": "A delightful selection of vegetarian dishes",
         "price": 40.99,
-        "image": "vegetarian_delight_image.jpg",
+        "image": "https://loremflickr.com/640/480/food",
         "courses": [
             "soup",
             "entree",
@@ -153,316 +946,559 @@
         "category": "SPECIALS"
     },
     {
+        "name": "Mediterranean Platter",
+        "description": "Assorted Mediterranean delights with hummus and pita",
+        "price": 26.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetable Curry Feast",
+        "description": "A feast of aromatic vegetable curry with basmati rice",
+        "price": 35.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Quinoa and Avocado Salad",
+        "description": "Fresh salad with quinoa, avocado, and a citrus dressing",
+        "price": 18.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Stuffed Bell Peppers",
+        "description": "Bell peppers stuffed with a flavorful mix of vegetables and rice",
+        "price": 23.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Caprese Salad",
+        "description": "Classic Caprese salad with fresh tomatoes, mozzarella, and basil",
+        "price": 16.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Spinach and Feta Stuffed Mushrooms",
+        "description": "Mushrooms filled with a savory mixture of spinach and feta",
+        "price": 21.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Eggplant Parmesan",
+        "description": "Baked eggplant with marinara sauce and melted cheese",
+        "price": 19.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetarian Sushi Platter",
+        "description": "Assorted vegetarian sushi rolls with soy sauce",
+        "price": 28.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "entree"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Cauliflower and Chickpea Curry",
+        "description": "Spicy curry with cauliflower and chickpeas served with naan",
+        "price": 30.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Greek Spinach Pie",
+        "description": "Flaky phyllo pastry filled with spinach and feta",
+        "price": 22.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "entree"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetable Stir-Fry",
+        "description": "Assorted vegetables stir-fried in a savory sauce",
+        "price": 25.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Mushroom Risotto",
+        "description": "Creamy risotto with mushrooms and Parmesan cheese",
+        "price": 33.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Sweet Potato and Black Bean Tacos",
+        "description": "Tacos filled with sweet potato and black bean mixture",
+        "price": 20.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Tomato Basil Bruschetta",
+        "description": "Toasted bread topped with diced tomatoes, basil, and balsamic glaze",
+        "price": 15.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Butternut Squash Risotto",
+        "description": "Creamy risotto with roasted butternut squash",
+        "price": 27.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Chickpea and Spinach Quesadilla",
+        "description": "Quesadilla with chickpeas, spinach, and melted cheese",
+        "price": 18.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "entree"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegan Buddha Bowl",
+        "description": "A bowl with quinoa, roasted vegetables, and tahini dressing",
+        "price": 24.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Crispy Tofu Stir-Fry",
+        "description": "Tofu stir-fried with colorful vegetables in a sweet and savory sauce",
+        "price": 23.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetarian Nachos",
+        "description": "Nachos loaded with cheese, black beans, and guacamole",
+        "price": 19.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "entree"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Eggplant and Zucchini Lasagna",
+        "description": "Layered lasagna with eggplant, zucchini, and marinara sauce",
+        "price": 29.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetable Pad Thai",
+        "description": "Stir-fried rice noodles with mixed vegetables in a tangy sauce",
+        "price": 21.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Chickpea Salad",
+        "description": "Refreshing salad with chickpeas, cucumber, and feta cheese",
+        "price": 17.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetarian Stuffed Peppers",
+        "description": "Bell peppers stuffed with a savory mixture of rice and vegetables",
+        "price": 25.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "entree",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Mango Avocado Salad",
+        "description": "Fresh salad with mango, avocado, and a lime vinaigrette",
+        "price": 18.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Vegetarian Spring Rolls",
+        "description": "Crispy spring rolls filled with vegetables and served with dipping sauce",
+        "price": 16.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "appetizer",
+            "entree"
+        ],
+        "category": "SPECIALS"
+    },
+    {
+        "name": "Brussels Sprouts with Balsamic Glaze",
+        "description": "Roasted Brussels sprouts drizzled with balsamic glaze",
+        "price": 14.99,
+        "image": "https://loremflickr.com/640/480/food",
+        "courses": [
+            "side"
+        ],
+        "category": "SPECIALS"
+    },
+    {
         "name": "Live Jazz Night",
         "description": "Groove to the live jazz tunes under the stars",
-        "price": 0,
-        "image": "live_jazz_night_image.jpg",
+        "price": 100,
+        "image": "https://loremflickr.com/640/480/food",
         "date": "2023-05-20",
         "time": "19:00",
         "location": "Rooftop Lounge",
         "category": "EVENTS"
     },
     {
-        "name": "Wine Tasting Evening",
-        "description": "Savor exquisite wines in a sophisticated setting",
-        "price": 0,
-        "image": "wine_tasting_image.jpg",
-        "date": "2023-06-10",
+        "name": "Culinary Extravaganza",
+        "description": "Experience a culinary journey with exquisite dishes",
+        "price": 85,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2023-06-02",
         "time": "18:30",
-        "location": "Wine Cellar",
-        "category": "EVENTS"
-    },
-    {
-        "name": "Family Sunday Brunch",
-        "description": "A family-friendly brunch with a variety of dishes",
-        "price": 0,
-        "image": "sunday_brunch_image.jpg",
-        "date": "2023-04-30",
-        "time": "11:30",
-        "location": "Main Dining Hall",
-        "category": "EVENTS"
-    },
-    {
-        "name": "Chicken Alfredo",
-        "description": "Creamy Alfredo sauce with grilled chicken over fettuccine",
-        "price": 17.99,
-        "image": "chicken_alfredo_image.jpg",
-        "ingredients": [
-            "fettuccine",
-            "Alfredo sauce",
-            "grilled chicken"
-        ],
-        "category": "MENU"
-    },
-    {
-        "name": "Tandoori Shrimp Skewers",
-        "description": "Marinated shrimp skewers grilled to perfection",
-        "price": 21.5,
-        "image": "tandoori_shrimp_image.jpg",
-        "ingredients": [
-            "shrimp",
-            "Tandoori marinade",
-            "bell peppers"
-        ],
-        "category": "MENU"
-    },
-    {
-        "name": "Margherita Pizza",
-        "description": "Classic pizza with fresh tomatoes, mozzarella, and basil",
-        "price": 14.99,
-        "image": "margherita_pizza_image.jpg",
-        "ingredients": [
-            "tomatoes",
-            "mozzarella",
-            "basil"
-        ],
-        "category": "MENU"
-    },
-    {
-        "name": "VIP Lounge",
-        "description": "Exclusive lounge with premium services and private seating",
-        "price": 0,
-        "image": "vip_lounge_image.jpg",
-        "capacity": 20,
-        "amenities": [
-            "personal concierge",
-            "private bar"
-        ],
-        "category": "DINING"
-    },
-    {
-        "name": "Garden Terrace",
-        "description": "Charming terrace surrounded by lush greenery",
-        "price": 0,
-        "image": "garden_terrace_image.jpg",
-        "capacity": 50,
-        "amenities": [
-            "open-air seating",
-            "botanical decor"
-        ],
-        "category": "DINING"
-    },
-    {
-        "name": "Executive Boardroom",
-        "description": "Sophisticated boardroom for corporate meetings",
-        "price": 0,
-        "image": "boardroom_image.jpg",
-        "capacity": 12,
-        "amenities": [
-            "video conferencing",
-            "catering options"
-        ],
-        "category": "DINING"
-    },
-    {
-        "name": "Thirsty Thursdays",
-        "description": "Quench your thirst with discounted drinks",
-        "price": 0,
-        "image": "thirsty_thursdays_image.jpg",
-        "valid_days": [
-            "Thursday"
-        ],
-        "discount_percentage": 15,
-        "category": "DEALS"
-    },
-    {
-        "name": "Weekend Getaway Package",
-        "description": "Escape for the weekend with a special hotel and dining package",
-        "price": 199.99,
-        "image": "weekend_getaway_image.jpg",
-        "valid_days": [
-            "Friday",
-            "Saturday",
-            "Sunday"
-        ],
-        "includes": [
-            "one-night stay",
-            "three-course dinner"
-        ],
-        "category": "DEALS"
-    },
-    {
-        "name": "Sushi Extravaganza",
-        "description": "A feast of the finest sushi and sashimi",
-        "price": 49.99,
-        "image": "sushi_extravaganza_image.jpg",
-        "includes": [
-            "sushi rolls",
-            "sashimi platter",
-            "wasabi"
-        ],
-        "category": "SPECIALS"
-    },
-    {
-        "name": "Whiskey Tasting Night",
-        "description": "Explore a variety of premium whiskeys with expert guidance",
-        "price": 0,
-        "image": "whiskey_tasting_image.jpg",
-        "date": "2023-07-15",
-        "time": "20:00",
-        "location": "Whiskey Lounge",
-        "category": "EVENTS"
-    },
-    {
-        "name": "Summer BBQ Fiesta",
-        "description": "Celebrate summer with a sizzling barbecue party",
-        "price": 0,
-        "image": "summer_bbq_image.jpg",
-        "date": "2023-08-05",
-        "time": "17:30",
-        "location": "Garden Terrace",
-        "category": "EVENTS"
-    },
-    {
-        "name": "Cocktail Mixology Class",
-        "description": "Learn to craft signature cocktails with our expert mixologists",
-        "price": 25.99,
-        "image": "cocktail_mixology_image.jpg",
-        "date": "2023-09-02",
-        "time": "19:00",
-        "location": "VIP Lounge",
-        "category": "EVENTS"
-    },
-    {
-        "name": "Mushroom Risotto",
-        "description": "Creamy Italian risotto with sautéed mushrooms",
-        "price": 16.99,
-        "image": "mushroom_risotto_image.jpg",
-        "ingredients": [
-            "Arborio rice",
-            "mushrooms",
-            "parmesan cheese"
-        ],
-        "category": "MENU"
-    },
-    {
-        "name": "BBQ Pulled Pork Sandwich",
-        "description": "Slow-cooked pulled pork in tangy BBQ sauce on a toasted bun",
-        "price": 14.5,
-        "image": "bbq_pulled_pork_image.jpg",
-        "ingredients": [
-            "pulled pork",
-            "BBQ sauce",
-            "coleslaw"
-        ],
-        "category": "MENU"
-    },
-    {
-        "name": "Caprese Salad",
-        "description": "Fresh salad with tomatoes, mozzarella, and balsamic glaze",
-        "price": 10.99,
-        "image": "caprese_salad_image.jpg",
-        "ingredients": [
-            "tomatoes",
-            "mozzarella",
-            "balsamic glaze"
-        ],
-        "category": "MENU"
-    },
-    {
-        "name": "Sake Lounge",
-        "description": "Elegant lounge offering a wide selection of sake",
-        "price": 0,
-        "image": "sake_lounge_image.jpg",
-        "capacity": 30,
-        "amenities": [
-            "sake tasting flights",
-            "sushi bar"
-        ],
-        "category": "DINING"
-    },
-    {
-        "name": "High Tea Experience",
-        "description": "Indulge in a delightful afternoon tea with a variety of treats",
-        "price": 28.99,
-        "image": "high_tea_image.jpg",
-        "capacity": 40,
-        "amenities": [
-            "assorted teas",
-            "pastries",
-            "finger sandwiches"
-        ],
-        "category": "DINING"
-    },
-    {
-        "name": "Game Night Tuesdays",
-        "description": "Unleash your competitive spirit with board games and trivia",
-        "price": 0,
-        "image": "game_night_image.jpg",
-        "valid_days": [
-            "Tuesday"
-        ],
-        "discount_percentage": 15,
-        "category": "DEALS"
-    },
-    {
-        "name": "Spa and Dinner Package",
-        "description": "Pamper yourself with a spa session followed by a gourmet dinner",
-        "price": 149.99,
-        "image": "spa_dinner_package_image.jpg",
-        "valid_days": [
-            "Monday",
-            "Wednesday",
-            "Friday"
-        ],
-        "includes": [
-            "60-minute spa treatment",
-            "three-course dinner"
-        ],
-        "category": "DEALS"
-    },
-    {
-        "name": "Vegan Delight",
-        "description": "A delectable array of vegan dishes",
-        "price": 42.99,
-        "image": "vegan_delight_image.jpg",
-        "courses": [
-            "quinoa salad",
-            "stuffed peppers",
-            "chocolate avocado mousse"
-        ],
-        "category": "SPECIALS"
-    },
-    {
-        "name": "Rum Tasting Cruise",
-        "description": "Set sail for an evening of rum tasting on a scenic cruise",
-        "price": 0,
-        "image": "rum_tasting_cruise_image.jpg",
-        "date": "2023-10-15",
-        "time": "18:00",
-        "location": "Onboard Cruise Ship",
-        "category": "EVENTS"
-    },
-    {
-        "name": "Halloween Masquerade Ball",
-        "description": "Celebrate Halloween with a mysterious masquerade ball",
-        "price": 30.99,
-        "image": "halloween_ball_image.jpg",
-        "date": "2023-10-28",
-        "time": "20:00",
         "location": "Grand Ballroom",
         "category": "EVENTS"
     },
     {
-        "name": "Holiday Feast Extravaganza",
-        "description": "A festive feast with holiday-inspired dishes",
-        "price": 65.5,
-        "image": "holiday_feast_image.jpg",
-        "includes": [
-            "roast turkey",
-            "cranberry sauce",
-            "pumpkin pie"
-        ],
-        "category": "SPECIALS"
+        "name": "Latin Dance Night",
+        "description": "Move your feet to the rhythmic beats of Latin music",
+        "price": 60,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2023-07-15",
+        "time": "20:30",
+        "location": "Dance Studio",
+        "category": "EVENTS"
     },
     {
-        "name": "Live Acoustic Night",
-        "description": "Relax to the soothing tunes of live acoustic performances",
-        "price": 0,
-        "image": "live_acoustic_night_image.jpg",
+        "name": "Wine Tasting Soiree",
+        "description": "Savor a selection of fine wines in an elegant setting",
+        "price": 75,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2023-08-08",
+        "time": "19:30",
+        "location": "Wine Cellar",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Garden Yoga Retreat",
+        "description": "Relax and rejuvenate with yoga amidst blooming gardens",
+        "price": 40,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2023-09-12",
+        "time": "08:00",
+        "location": "Botanical Gardens",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Cocktail Mixology Class",
+        "description": "Learn the art of crafting signature cocktails from experts",
+        "price": 55,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2023-10-05",
+        "time": "17:00",
+        "location": "Mixology Lounge",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Outdoor Movie Night",
+        "description": "Enjoy a cinematic experience under the open sky",
+        "price": 30,
+        "image": "https://loremflickr.com/640/480/food",
         "date": "2023-11-18",
         "time": "19:30",
-        "location": "Garden Terrace",
+        "location": "Lawn Amphitheater",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Paint and Sip Evening",
+        "description": "Unleash your creativity with a painting and wine session",
+        "price": 50,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2023-12-03",
+        "time": "18:00",
+        "location": "Art Studio",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Jazz Brunch",
+        "description": "Enjoy a leisurely brunch with live jazz melodies",
+        "price": 65,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-01-15",
+        "time": "11:30",
+        "location": "Brasserie Terrace",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Tech Innovation Forum",
+        "description": "Explore the latest trends and innovations in technology",
+        "price": 75,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-02-08",
+        "time": "14:00",
+        "location": "Innovation Hub",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Dance Marathon for Charity",
+        "description": "Dance non-stop for a good cause and support charity",
+        "price": 25,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-03-22",
+        "time": "20:00",
+        "location": "Community Center",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Fashion Show Extravaganza",
+        "description": "Witness the latest trends on the runway with top models",
+        "price": 80,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-04-14",
+        "time": "19:00",
+        "location": "Fashion Arena",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Gaming Tournament",
+        "description": "Compete in thrilling video game challenges with gamers",
+        "price": 45,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-05-30",
+        "time": "15:30",
+        "location": "Gaming Lounge",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Sushi Making Workshop",
+        "description": "Learn the art of making delicious sushi from a master chef",
+        "price": 60,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-06-20",
+        "time": "17:00",
+        "location": "Culinary School",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Mindfulness Meditation Retreat",
+        "description": "Immerse yourself in mindfulness and meditation practices",
+        "price": 35,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-07-10",
+        "time": "08:30",
+        "location": "Meditation Center",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Carnival Funfair",
+        "description": "Experience the joy of a colorful carnival with games and rides",
+        "price": 40,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-08-25",
+        "time": "16:00",
+        "location": "Fairgrounds",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Poetry Slam Night",
+        "description": "Express yourself through spoken word and poetry",
+        "price": 30,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-09-18",
+        "time": "19:30",
+        "location": "Poetry Cafe",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Food Truck Festival",
+        "description": "Indulge in a variety of delicious dishes from food trucks",
+        "price": 20,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-10-12",
+        "time": "17:00",
+        "location": "Street Food Corner",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Art Exhibition Opening",
+        "description": "Explore captivating artworks by talented local artists",
+        "price": 25,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-11-05",
+        "time": "18:00",
+        "location": "Art Gallery",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Champagne Sunset Cruise",
+        "description": "Sail into the sunset with a glass of champagne in hand",
+        "price": 90,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2024-12-22",
+        "time": "17:30",
+        "location": "Harbor Cruise",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Tech Startup Pitch Night",
+        "description": "Witness innovative startup pitches and networking",
+        "price": 70,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-01-10",
+        "time": "19:00",
+        "location": "Tech Hub",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Outdoor Yoga by the Lake",
+        "description": "Practice yoga in nature with a serene lakeside view",
+        "price": 35,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-02-28",
+        "time": "09:00",
+        "location": "Lakeside Park",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Chocolate Tasting Gala",
+        "description": "Indulge in a decadent chocolate tasting experience",
+        "price": 55,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-03-20",
+        "time": "20:00",
+        "location": "Chocolatier's Haven",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Board Game Night",
+        "description": "Enjoy a night of board games and friendly competition",
+        "price": 20,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-04-15",
+        "time": "18:30",
+        "location": "Game Cafe",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Hiking Adventure Day",
+        "description": "Embark on a scenic hiking adventure with fellow enthusiasts",
+        "price": 30,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-05-12",
+        "time": "10:00",
+        "location": "Nature Trail",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Karaoke Night",
+        "description": "Sing your heart out with friends in a lively karaoke session",
+        "price": 15,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-06-08",
+        "time": "21:00",
+        "location": "Karaoke Lounge",
+        "category": "EVENTS"
+    },
+    {
+        "name": "Beer and BBQ Festival",
+        "description": "Savor the combination of craft beer and delicious BBQ dishes",
+        "price": 40,
+        "image": "https://loremflickr.com/640/480/food",
+        "date": "2025-07-25",
+        "time": "16:00",
+        "location": "Beer Garden",
         "category": "EVENTS"
     }
 ]

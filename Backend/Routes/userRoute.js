@@ -1,5 +1,5 @@
 const express = require("express");
-
+const { blacklist } = require('../blacklist ');
 const { userModel } = require("../Models/userModel");
 
 // for hashing & comparing a password
@@ -52,7 +52,12 @@ userRouter.post("/login", async (req, res) => {
 
 
                     // To send in body
-                    res.status(200).json({ msg: "Login Successfull....!", token: token })
+                    res.status(200).json({
+                        msg: "Login Successfull....!", token: token, user: {
+                            userName: user.name,
+                            userEmail: user.email
+                        },
+                    })
 
 
                     // To send in headers
@@ -69,6 +74,24 @@ userRouter.post("/login", async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 })
+
+
+
+// logout
+userRouter.post("/logout", (req, res) => {
+    const token = req.headers.authorization;
+
+    try {
+        if (token) {
+            blacklist.push(token);
+            res.status(200).json({ msg: "User has Logged out" });
+        } else {
+            res.status(400).json({ error: "Token not provided" });
+        }
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
 
 
 

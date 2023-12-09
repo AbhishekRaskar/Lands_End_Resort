@@ -17,16 +17,80 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
+  useToast,
 } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../Redux/LoginReducer/action";
 
 const Login = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // console.log(email, password);
+  const dispatch = useDispatch();
+
+  const toast = useToast();
+
+  const auth = useSelector((store) => store.LoginReducer.isAuth);
+  const error = useSelector((store) => store.LoginReducer.isError);
+  const token = useSelector((store) => store.LoginReducer.token);
+  // console.log(auth);
+  // console.log(error);
+  // console.log(token);
 
   const onClose = () => {
     // You can handle modal close action here
     setIsOpen(false);
   };
 
+  const handleLogin = async () => {
+    const userData = {
+      email,
+      password,
+    };
+
+    try {
+      // Dispatch login action and wait for the result
+      const loginResponse = await dispatch(userLogin(userData));
+
+      console.log("Login Response:", loginResponse);
+
+      // Check if the login was successful based on the response
+      if (loginResponse.success) {
+        localStorage.setItem("token", loginResponse.payload);
+
+        // If login is successful, show success toast
+        toast({
+          position: "top",
+          title: "Login successful",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+
+        // Close the modal after successful login
+        onClose();
+      } else {
+        // If login fails, show error toast
+        toast({
+          position: "top",
+          title: "Login failed",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      // If there's an error, show error toast
+      toast({
+        position: "top",
+        title: "Login failed",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -42,11 +106,21 @@ const Login = () => {
             <Stack spacing={4}>
               <FormControl id="email" isRequired>
                 <FormLabel color={"black"}>Email address</FormLabel>
-                <Input type="email" color={"#DC143C"} />
+                <Input
+                  type="email"
+                  color={"#DC143C"}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel color={"black"}>Password</FormLabel>
-                <Input type="password" color={"#DC143C"} />
+                <Input
+                  type="password"
+                  color={"#DC143C"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -72,6 +146,7 @@ const Login = () => {
                   _hover={{
                     bg: "#DC143C",
                   }}
+                  onClick={handleLogin}
                 >
                   Sign in
                 </Button>

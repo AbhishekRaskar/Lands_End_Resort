@@ -18,7 +18,7 @@ export const Footer = () => {
           justifyContent={"center"}
           p={"10"}
         >
-          <Box w={"95%"}>
+          <Box w={"80%"} margin={"auto"} gap={20}>
             <Box
               // bg={"transparent"}
               color={"white"}
@@ -97,7 +97,7 @@ export const Footer = () => {
               </UnorderedList>
 
               <Box
-                w={"350px"}
+                w={"30%"}
                 h={"180px"}
                 p={"15px"}
                 bg={"#eeeeee"}
@@ -118,7 +118,7 @@ export const Footer = () => {
                   borderRadius={"30px"}
                   color={"white"}
                   fontWeight={"bold"}
-                  w={"150px"}
+                  w={"70%"}
                   h={"50px"}
                   display={"flex"}
                   alignItems={"center"}
@@ -184,7 +184,7 @@ export const Footer = () => {
           >
             Lands End Hotel & Resort
           </Text>
-
+          <br />
           <Box
             w={"85%"}
             h={"180px"}

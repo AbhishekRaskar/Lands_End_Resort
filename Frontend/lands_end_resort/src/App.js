@@ -9,6 +9,7 @@ function App() {
       <br />
       <Navbar />
       <br />
+      <br />
       <AllRoutes />
       <br />
       <br />

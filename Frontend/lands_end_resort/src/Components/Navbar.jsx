@@ -1,3 +1,6 @@
+// Navbar.js
+
+import React from "react";
 import {
   Box,
   Flex,
@@ -7,16 +10,20 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Input
+  Input,
+  Text,
+  Tooltip,
+  Button,
+  VStack,
+  useToast,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
 import Logo from "../Images/Logo2.png";
-
 import { AiOutlineUser } from "react-icons/ai";
 import { MdLocalMall } from "react-icons/md";
-// import { useContext } from 'react'
-// import { AuthContext } from '../Context/AuthContextProvider'
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../Redux/LoginReducer/action";
 
 const links = [
   { to: "/", name: "HOME" },
@@ -32,10 +39,31 @@ const deactive = { color: "black", textDecoration: "none" };
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const { token, logout, isAuth } = useContext(AuthContext);
+  const isAuth = useSelector((store) => store.LoginReducer.isAuth);
+  const userName = useSelector((store) => store.LoginReducer.userName);
+  // console.log(isAuth);
+  const dispatch = useDispatch();
+
+  const toast = useToast();
+
+  const handleLogout = () => {
+    // console.log("Logging out...");
+    localStorage.clear();
+    dispatch(userLogout());
+    // console.log("Logout action dispatched.");
+    toast({
+      position: "top",
+      title: "Logout Successful",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+    window.location.href = "/";
+    // console.log("Navigating to /");
+  };
 
   return (
-    <Box style={{ position: "sticky" }}>
+    <Box>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={7}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
@@ -47,7 +75,9 @@ const Navbar = () => {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Image src={Logo} alt="Logo" width={230} />
+              <NavLink to={"/"}>
+                <Image src={Logo} alt="Logo" width={230} />
+              </NavLink>
             </Box>
             <HStack
               as={"nav"}
@@ -72,35 +102,49 @@ const Navbar = () => {
             placeholder="Search here"
             width={500}
           />
-          <Box
-            style={{
-              fontSize: "27px",
-            }}
-          >
-            <Flex gap="50px">
-              <NavLink to="">
+          <Box style={{ fontSize: "27px" }}>
+            <Flex gap="50px" alignItems="center">
+              <NavLink to="/cart">
                 <MdLocalMall style={{ color: "black" }} />
               </NavLink>
-              <NavLink to="/login">
-                <AiOutlineUser />
-              </NavLink>
+              <Box>
+                {isAuth ? (
+                  <Tooltip label="Logout" aria-label="Logout">
+                    <VStack spacing={2}>
+                      <Text
+                        fontSize={"lg"}
+                        textDecoration="none"
+                        color="#DC143C"
+                        _hover={{ textDecoration: "underline" }}
+                        cursor="pointer"
+                      >
+                        {userName}
+                      </Text>
+                      <NavLink to="/logout">
+                        <Button
+                          fontSize={"md"}
+                          bg={"#DC143C"}
+                          color={"white"}
+                          _hover={{
+                            bg: "#DC143C",
+                          }}
+                          cursor="pointer"
+                          onClick={handleLogout}
+                        >
+                          Logout
+                        </Button>
+                      </NavLink>
+                    </VStack>
+                  </Tooltip>
+                ) : (
+                  <NavLink to="/login">
+                    <AiOutlineUser />
+                  </NavLink>
+                )}
+              </Box>
             </Flex>
           </Box>
-          <Box>
-            {
-              // isAuth ?
-              //  (
-              // <Box>
-              //     <Heading size='sm'><Text as='samp' fontSize='xs'>{token}</Text></Heading>
-              //     <Button style={{
-              //         width:'auto',height:'25px'
-              //     }} marginTop={'4px'} colorScheme='pink' variant='outline' onClick={logout}>LOGOUT</Button>
-              // </Box>
-              // )
-            }
-          </Box>
         </Flex>
-
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>

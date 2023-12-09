@@ -167,7 +167,7 @@ const Homepage = () => {
         <Heading mb={2} textAlign={"left"}>
           Collections
         </Heading>
-        <Text fontSize="lg" mb={3} textAlign={"left"}>
+        <Text fontSize="lg" color="gray.500" mb={3} textAlign={"left"}>
           Explore curated lists of top restaurants, events, dining, and
           specials, based on trends
         </Text>
@@ -329,7 +329,7 @@ const Homepage = () => {
       {/* fifth */}
       <Box w={"80%"} margin={"auto"}>
         <Heading mb={2} textAlign={"left"}>
-          Inspiration for your first order
+          Top brands for you
         </Heading>
         <br />
         <SimpleGrid columns={{ sm: 2, md: 4, lg: 6 }} spacing={4}>
