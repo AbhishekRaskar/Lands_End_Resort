@@ -19,15 +19,21 @@ const CartProduct = ({ cartItem }) => {
           <Text fontSize="md" fontWeight="bold" mb="2">
             Price: ${menu.price.toFixed(2)}
           </Text>
+          <br />
           {menu.category === "MENU" && (
             <Text fontSize="sm">
-              Ingredients: {menu.ingredients?.join(", ")}
+              Ingredients: {menu.ingredients?.join(", ").toUpperCase()}
             </Text>
           )}
           {menu.category === "DINING" && (
             <>
-              <Text fontSize="sm">Capacity: {menu.capacity} people</Text>
-              <Text fontSize="sm">Amenities: {menu.amenities?.join(", ")}</Text>
+              <Text color={"gray.500"} fontSize="sm">
+                Capacity: {menu.capacity} people
+              </Text>
+              <br />
+              <Text fontSize="sm">
+                Amenities: {menu.amenities?.join(", ").toUpperCase()}
+              </Text>
             </>
           )}
           {menu.category === "DEALS" && (

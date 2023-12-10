@@ -91,7 +91,7 @@ const Homepage = () => {
       </Box>
       <br />
       {/* second */}
-      <Box w={"70%"} margin={"auto"}>
+      <Box w={"80%"} margin={"auto"}>
         <SimpleGrid
           columns={{ base: 1, md: 2, lg: 3 }}
           alignContent={"center"}

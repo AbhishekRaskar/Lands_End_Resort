@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import {
   FormControl,
   FormLabel,
@@ -16,12 +17,15 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userSignup } from "../Redux/RegisterReducer/action";
 
-const SignupFormModal = () => {
+const Signup = () => {
   const [isOpen, setIsOpen] = useState(true);
+
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -31,7 +35,7 @@ const SignupFormModal = () => {
     city: "",
     age: "",
   });
-
+  console.log(formData);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -39,12 +43,20 @@ const SignupFormModal = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Form submitted:", formData);
-    // Close the modal after form submission
-    setIsOpen(false);
+    try {
+      const response = await dispatch(userSignup(formData));
+      console.log("Server response:", response);
+
+      // Check if the registration was successful
+      if (response.success) {
+        setIsOpen(false);
+        window.location.href = "/login"; // Navigate to the login page
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   const onClose = () => {
@@ -100,6 +112,7 @@ const SignupFormModal = () => {
                     value={formData.gender}
                     onChange={handleChange}
                   >
+                    <option value="">Select the Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     {/* Add other gender options as needed */}
@@ -139,12 +152,11 @@ const SignupFormModal = () => {
                 </Stack>
               </VStack>
               <br />
-              <Text textAlign= "center">
+              <Text textAlign="center">
                 Already have an account?
                 <br />
                 <Link
                   style={{
-                    
                     textDecoration: "underline",
                     textDecorationColor: "#DC143C",
                     color: "#DC143C",
@@ -157,12 +169,9 @@ const SignupFormModal = () => {
             </form>
           </Box>
         </ModalBody>
-        <ModalFooter>
-          {/* You can add additional footer content here */}
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );
 };
 
-export default SignupFormModal;
+export default Signup;

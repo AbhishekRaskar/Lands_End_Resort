@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Box, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import CartProduct from "../Components/CartProduct"; // Adjust the path based on your project structure
 
 const Cart = () => {
@@ -35,7 +35,12 @@ const Cart = () => {
 
   return (
     <Box>
-      <Heading mb="4">Cart PAGE</Heading>
+      <Heading fontWeight="bold" mb="2">
+        Ready to&nbsp;
+        <Text as="span" color="red">
+          Order
+        </Text>
+      </Heading>
       {cartData && (
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4}>
           {cartData.items.map((cartItem) => (
