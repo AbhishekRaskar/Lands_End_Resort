@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Box, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import CartProduct from "../Components/CartProduct"; // Adjust the path based on your project structure
+import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import CartProduct from "../Components/CartProduct";
 
 const Cart = () => {
   const [cartData, setCartData] = useState({ items: [] });
+  const [quantity, setQuantity] = useState(1);
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  const handleIncrease = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      // Navigate to login page if token is not present
-      // Adjust the route based on your application structure
       window.location.href = "/login";
       return;
     }
 
-    // Fetch cart data if the token is present
     axios
       .get("https://land-end-resort.onrender.com/carts", {
         headers: {
@@ -25,26 +34,55 @@ const Cart = () => {
       })
       .then((response) => {
         console.log("Response:", response);
-        setCartData(response.data.cart); // Update to access cart data properly
+        setCartData(response.data.cart);
+        calculateTotalAmount(response.data.cart);
       })
       .catch((error) => {
         console.log("Error fetching cart data:", error);
-        // Handle errors as needed
       });
-  }, []);
+  }, [quantity]);
+
+  const handleDeleteItem = (itemId) => {
+    // Save the current cart data before updating it
+    const currentCartData = { ...cartData };
+
+    setCartData((prevData) => ({
+      ...prevData,
+      items: prevData.items.filter((item) => item._id !== itemId),
+    }));
+
+    // Recalculate total amount after item deletion using the saved cart data
+    calculateTotalAmount(currentCartData);
+  };
+
+  const calculateTotalAmount = (cart) => {
+    const total = cart.items.reduce(
+      (acc, item) => acc + item.menu.price * quantity,
+      0
+    );
+    setTotalAmount(Number(total));
+  };
 
   return (
-    <Box>
+    <Box w={"90%"} margin={"auto"} p={4}>
       <Heading fontWeight="bold" mb="2">
         Ready to&nbsp;
         <Text as="span" color="red">
           Order
         </Text>
       </Heading>
+      <Text>Total Amount: ${Number(Math.ceil(totalAmount.toFixed(2)))}</Text>
       {cartData && (
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4}>
           {cartData.items.map((cartItem) => (
-            <CartProduct key={cartItem._id} cartItem={cartItem} />
+            <CartProduct
+              key={cartItem._id}
+              cartItem={cartItem}
+              onDelete={handleDeleteItem}
+              handleDecrease={handleDecrease}
+              handleIncrease={handleIncrease}
+              quantity={quantity}
+            />
           ))}
         </SimpleGrid>
       )}

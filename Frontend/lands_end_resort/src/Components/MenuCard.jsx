@@ -1,12 +1,13 @@
 // MenuCard component
 import React from "react";
-import { Box, Image, Text, Badge, Button } from "@chakra-ui/react";
-import axios from "axios"; // Import axios for making HTTP requests
+import { Box, Image, Text, Badge, Button, useToast } from "@chakra-ui/react";
+import axios from "axios";
 
 const MenuCard = ({ product }) => {
-  console.log("Product:", product);
+  const toast = useToast();
+
   const {
-    _id, // Add id to the destructuring assignment
+    _id,
     name,
     description,
     price,
@@ -15,42 +16,71 @@ const MenuCard = ({ product }) => {
     category,
   } = product;
 
-  const badgeColor = "#D32F2F"; // Color code for the badge
+  const badgeColor = "#D32F2F";
 
-  // Function to handle "Add To Cart" button click
-  const handleAddToCart = () => {
-    // console.log("Product ID:", id);
-    // Retrieve the user token from local storage
+  const handleAddToCart = async () => {
     const userToken = localStorage.getItem("token");
-    console.log(userToken);
 
-    // Make sure the user is authenticated before making the request
     if (!userToken) {
       console.error("User not authenticated. Please log in.");
-      // You might want to redirect the user to the login page or show a login modal
       return;
     }
 
-    // Make a request to the specified URL with the product ID and user token
-    axios
-      .post(
-        `https://land-end-resort.onrender.com/carts/add-to-cart/${_id}`,
-        {},
+    try {
+      const isInCartResponse = await axios.get(
+        `https://land-end-resort.onrender.com/carts/check/${_id}`,
         {
           headers: {
             Authorization: userToken,
           },
         }
-      )
-      .then((response) => {
-        // Handle success if needed
-        console.log("Product added to cart:", response.data.msg);
-        console.log("Updated Cart:", response.data.cart);
-      })
-      .catch((error) => {
-        // Handle error if needed
-        console.error("Error adding product to cart:", error);
+      );
+
+      if (isInCartResponse.data.isInCart) {
+        // Product is already in the cart, show a toast
+        toast({
+          position: "top",
+          title: "Menu already in cart",
+          status: "warning",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        // Product is not in the cart, proceed to add it
+        const addToCartResponse = await axios.post(
+          `https://land-end-resort.onrender.com/carts/add-to-cart/${_id}`,
+          {},
+          {
+            headers: {
+              Authorization: userToken,
+            },
+          }
+        );
+
+        console.log("Product added to cart:", addToCartResponse.data.msg);
+        console.log("Updated Cart:", addToCartResponse.data.cart);
+
+        // Show a success toast
+        toast({
+          position: "top",
+          title: "Menu added to cart",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error adding Menu to cart:", error);
+
+      // Show an error toast
+      toast({
+        position: "top",
+        title: "Error adding Menu to cart",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
       });
+    }
   };
 
   return (
@@ -111,7 +141,7 @@ const MenuCard = ({ product }) => {
           _hover={{
             bg: "#DC143C",
           }}
-          onClick={handleAddToCart} // Attach the click handler
+          onClick={handleAddToCart}
         >
           Add To Cart
         </Button>

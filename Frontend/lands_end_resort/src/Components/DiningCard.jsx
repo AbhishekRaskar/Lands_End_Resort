@@ -1,9 +1,94 @@
-import { Box, Image, Badge, Text, Flex, Button } from "@chakra-ui/react";
+// DiningCard component
 import React from "react";
+import {
+  Box,
+  Image,
+  Badge,
+  Text,
+  Flex,
+  Button,
+  useToast,
+} from "@chakra-ui/react";
+import axios from "axios";
 
 const DiningCard = ({ product }) => {
-  const { name, description, price, image, capacity, amenities, category } =
-    product;
+  const {
+    _id,
+    name,
+    description,
+    price,
+    image,
+    capacity,
+    amenities,
+    category,
+  } = product;
+
+  const toast = useToast();
+
+  const handleAddToCart = async () => {
+    const userToken = localStorage.getItem("token");
+
+    if (!userToken) {
+      console.error("User not authenticated. Please log in.");
+      return;
+    }
+
+    try {
+      const isInCartResponse = await axios.get(
+        `https://land-end-resort.onrender.com/carts/check/${_id}`,
+        {
+          headers: {
+            Authorization: userToken,
+          },
+        }
+      );
+
+      if (isInCartResponse.data.isInCart) {
+        // Dining item is already in the cart, show a toast
+        toast({
+          position: "top",
+          title: "Dining item already in cart",
+          status: "warning",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        // Dining item is not in the cart, proceed to add it
+        const addToCartResponse = await axios.post(
+          `https://land-end-resort.onrender.com/carts/add-to-cart/${_id}`,
+          {},
+          {
+            headers: {
+              Authorization: userToken,
+            },
+          }
+        );
+
+        console.log("Dining added to cart:", addToCartResponse.data.msg);
+        console.log("Updated Cart:", addToCartResponse.data.cart);
+
+        // Show a success toast
+        toast({
+          position: "top",
+          title: "Dining added to cart",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error adding Dining to cart:", error);
+
+      // Show an error toast
+      toast({
+        position: "top",
+        title: "Error adding Dining to cart",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
 
   return (
     <Box
@@ -41,12 +126,12 @@ const DiningCard = ({ product }) => {
           </Text>
         </Box>
 
-        {/* <Flex mt="2" alignItems="center"> */}
-        <Text>Price : ${price}</Text>
-        <Text color="gray.500" ml="2">
-          Capacity: {capacity}
-        </Text>
-        {/* </Flex> */}
+        <Flex mt="2">
+          <Text>Price: ${price}</Text>
+          <Text color="gray.500" ml="2">
+            Capacity: {capacity}
+          </Text>
+        </Flex>
 
         <Flex mt="2">
           <Text>Amenities: {amenities.join(", ").toUpperCase()}</Text>
@@ -59,6 +144,7 @@ const DiningCard = ({ product }) => {
         _hover={{
           bg: "#DC143C",
         }}
+        onClick={handleAddToCart}
       >
         Add To Cart
       </Button>

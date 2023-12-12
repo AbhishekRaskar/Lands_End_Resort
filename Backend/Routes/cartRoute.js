@@ -120,6 +120,27 @@ cartRouter.delete("/remove-from-cart/:menuID", async (req, res) => {
     }
 });
 
+
+// Check if a menu item is already in the cart
+cartRouter.get("/check/:menuID", async (req, res) => {
+    const { menuID } = req.params;
+
+    try {
+        const isItemInCart = await cartModel.exists({
+            "items.userName": req.user.userName,
+            "items.menu": menuID,
+        });
+
+        if (isItemInCart) {
+            res.json({ isInCart: true, msg: "Menu item is already in the cart." });
+        } else {
+            res.json({ isInCart: false, msg: "Menu item is not in the cart." });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error. Unable to check cart." });
+    }
+});
+
 module.exports = {
     cartRouter,
 };

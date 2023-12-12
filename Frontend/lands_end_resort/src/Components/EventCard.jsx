@@ -1,12 +1,88 @@
-import { Box, Image, Badge, Text, Stack, Button } from "@chakra-ui/react";
+// EventCard component
+import React from "react";
+import { Box, Image, Badge, Text, Button, useToast } from "@chakra-ui/react";
+import axios from "axios";
 
 const EventCard = ({ eventData }) => {
-  if (!eventData) {
-    return null;
-  }
+  const toast = useToast();
 
-  const { name, description, price, image, date, time, location, category } =
-    eventData;
+  const {
+    _id,
+    name,
+    description,
+    price,
+    image,
+    date,
+    time,
+    location,
+    category,
+  } = eventData;
+
+  // Function to handle "Add To Cart" button click
+  const handleAddToCart = async () => {
+    const userToken = localStorage.getItem("token");
+
+    if (!userToken) {
+      console.error("User not authenticated. Please log in.");
+      return;
+    }
+
+    try {
+      const isInCartResponse = await axios.get(
+        `https://land-end-resort.onrender.com/carts/check/${_id}`,
+        {
+          headers: {
+            Authorization: userToken,
+          },
+        }
+      );
+
+      if (isInCartResponse.data.isInCart) {
+        // Event is already in the cart, show a toast
+        toast({
+          position: "top",
+          title: "Event already in cart",
+          status: "warning",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        // Event is not in the cart, proceed to add it
+        const addToCartResponse = await axios.post(
+          `https://land-end-resort.onrender.com/carts/add-to-cart/${_id}`,
+          {},
+          {
+            headers: {
+              Authorization: userToken,
+            },
+          }
+        );
+
+        console.log("Event added to cart:", addToCartResponse.data.msg);
+        console.log("Updated Cart:", addToCartResponse.data.cart);
+
+        // Show a success toast
+        toast({
+          position: "top",
+          title: "Event added to cart",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error adding Event to cart:", error);
+
+      // Show an error toast
+      toast({
+        position: "top",
+        title: "Error adding Event to cart",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
 
   return (
     <Box
@@ -61,15 +137,16 @@ const EventCard = ({ eventData }) => {
         </Box>
       </Box>
       <br />
-        <Button
-          bg={"#DC143C"}
-          color={"white"}
-          _hover={{
-            bg: "#DC143C",
-          }}
-        >
-          Add To Cart
-        </Button>
+      <Button
+        bg={"#DC143C"}
+        color={"white"}
+        _hover={{
+          bg: "#DC143C",
+        }}
+        onClick={handleAddToCart}
+      >
+        Add To Cart
+      </Button>
     </Box>
   );
 };

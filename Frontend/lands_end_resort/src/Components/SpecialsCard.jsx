@@ -1,8 +1,76 @@
-import { Box, Badge, Image, Text, Button } from "@chakra-ui/react";
+// SpecialsCard component
 import React from "react";
+import { Box, Badge, Image, Text, Button, useToast } from "@chakra-ui/react";
+import axios from "axios";
 
 const SpecialsCard = ({ menuItem }) => {
-  const { name, description, price, image, courses, category } = menuItem;
+  const { _id, name, description, price, image, courses, category } = menuItem;
+
+  const toast = useToast();
+  const handleAddToCart = async () => {
+    const userToken = localStorage.getItem("token");
+
+    if (!userToken) {
+      console.error("User not authenticated. Please log in.");
+      return;
+    }
+
+    try {
+      const isInCartResponse = await axios.get(
+        `https://land-end-resort.onrender.com/carts/check/${_id}`,
+        {
+          headers: {
+            Authorization: userToken,
+          },
+        }
+      );
+
+      if (isInCartResponse.data.isInCart) {
+        // Specials menu item is already in the cart, show a toast
+        toast({
+          position: "top",
+          title: "Specials item already in cart",
+          status: "warning",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        // Specials menu item is not in the cart, proceed to add it
+        const addToCartResponse = await axios.post(
+          `https://land-end-resort.onrender.com/carts/add-to-cart/${_id}`,
+          {},
+          {
+            headers: {
+              Authorization: userToken,
+            },
+          }
+        );
+
+        console.log("Specials added to cart:", addToCartResponse.data.msg);
+        console.log("Updated Cart:", addToCartResponse.data.cart);
+
+        // Show a success toast
+        toast({
+          position: "top",
+          title: "Specials added to cart",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error adding Specials to cart:", error);
+
+      // Show an error toast
+      toast({
+        position: "top",
+        title: "Error adding Specials to cart",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
 
   return (
     <Box
@@ -49,6 +117,7 @@ const SpecialsCard = ({ menuItem }) => {
         _hover={{
           bg: "#DC143C",
         }}
+        onClick={handleAddToCart}
       >
         Add To Cart
       </Button>
