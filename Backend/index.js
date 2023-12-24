@@ -6,6 +6,7 @@ const cors = require("cors");
 const { userRouter } = require("./Routes/userRoute");
 const { menuRouter } = require("./Routes/menuRoute");
 const { cartRouter } = require("./Routes/cartRoute");
+const { adminRouter } = require("./Routes/adminRoute");
 
 app.use(cors())
 
@@ -15,6 +16,7 @@ app.use("/users", userRouter)
 app.use("/menus", menuRouter)
 app.use("/carts", cartRouter)
 
+app.use("/admin", adminRouter);
 
 app.listen(process.env.PORT, async () => {
     try {

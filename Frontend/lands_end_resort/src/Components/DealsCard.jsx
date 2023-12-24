@@ -11,7 +11,15 @@ const DealsCard = ({ product }) => {
     const userToken = localStorage.getItem("token");
 
     if (!userToken) {
-      console.error("User not authenticated. Please log in.");
+      console.error("Please log in.");
+      toast({
+        position: "top",
+        title:
+          "Uh-oh! It seems you're not logged in. Time to log in and explore!",
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+      });
       return;
     }
 

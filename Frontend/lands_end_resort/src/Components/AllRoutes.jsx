@@ -10,6 +10,8 @@ import Cart from "../Pages/Cart";
 import Deals from "../Pages/Deals";
 import Specials from "../Pages/Specials";
 import Events from "../Pages/Events";
+import Payment from "../Pages/Payment";
+import AdminSidebar from "./AdminSidebar";
 
 const AllRoutes = () => {
   return (
@@ -25,6 +27,8 @@ const AllRoutes = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/specials" element={<Specials />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/admin" element={<AdminSidebar />} />
       </Routes>
     </div>
   );

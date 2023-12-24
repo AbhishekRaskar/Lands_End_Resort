@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   FormControl,
@@ -28,6 +28,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   // console.log(email, password);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const toast = useToast();
 
@@ -58,6 +60,11 @@ const Login = () => {
       // Check if the login was successful based on the response
       if (loginResponse.success) {
         localStorage.setItem("token", loginResponse.payload);
+
+        // If the email includes "@admin", navigate to "/admin"
+        if (email.includes("@landsend.com")) {
+          navigate("/admin");
+        }
 
         // If login is successful, show success toast
         toast({

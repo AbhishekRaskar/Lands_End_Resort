@@ -54,7 +54,7 @@ const Navbar = () => {
     toast({
       position: "top",
       title: "Logout Successful",
-      status: "success",
+      status: "warning",
       duration: 3000,
       isClosable: true,
     });
