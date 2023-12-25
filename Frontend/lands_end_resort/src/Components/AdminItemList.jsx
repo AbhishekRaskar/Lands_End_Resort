@@ -19,12 +19,12 @@ import {
   ModalFooter,
   useDisclosure,
   Input,
-  Textarea,
   Select,
+  Flex,
+  useToast, // Import useToast from Chakra UI
 } from "@chakra-ui/react";
 import axios from "axios";
 import { FiEdit2, FiTrash } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
 
 const AdminItemList = () => {
   const [items, setItems] = useState([]);
@@ -46,6 +46,11 @@ const AdminItemList = () => {
     ingredients: [],
     valid_days: [],
   });
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
 
   const fetchData = async () => {
     try {
@@ -82,6 +87,28 @@ const AdminItemList = () => {
     }
   };
 
+  const toast = useToast(); // Initialize useToast
+
+  const notifySuccess = (message) => {
+    toast({
+      title: "Success",
+      description: message,
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
+  };
+
+  const notifyError = (message) => {
+    toast({
+      title: "Error",
+      description: message,
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+    });
+  };
+
   const handleEditClick = (item) => {
     setEditItem(item);
     onOpen();
@@ -89,133 +116,69 @@ const AdminItemList = () => {
 
   const handleSaveEdit = async () => {
     try {
+      let updatedItem = { ...editItem };
+
+      switch (editItem.category) {
+        case "MENU":
+          updatedItem.ingredients = editItem.ingredients.join(", ");
+          break;
+
+        case "DINING":
+          updatedItem.capacity = parseInt(editItem.capacity, 10);
+          updatedItem.amenities = editItem.amenities.join(", ");
+          break;
+
+        case "DEALS":
+          updatedItem.valid_days = editItem.valid_days.join(", ");
+          updatedItem.discount_percentage = editItem.discount_percentage;
+          break;
+
+        case "SPECIALS":
+          updatedItem.courses = editItem.courses.join(", ");
+          break;
+
+        case "EVENTS":
+          updatedItem.date = editItem.date;
+          updatedItem.time = editItem.time;
+          updatedItem.location = editItem.location;
+          break;
+
+        default:
+          break;
+      }
+
       const response = await axios.patch(
         `https://land-end-resort.onrender.com/menus/update/${editItem._id}`,
-        editItem
+        updatedItem
       );
+
       console.log("Edit successful:", response.data);
       onClose();
       fetchData();
+      notifySuccess("Item updated successfully");
     } catch (error) {
       console.error("Error editing data:", error);
+      notifyError("Error updating item");
+    }
+  };
+
+  const handleDelete = async (itemId) => {
+    try {
+      const response = await axios.delete(
+        `https://land-end-resort.onrender.com/menus/delete/${itemId}`
+      );
+
+      console.log("Delete successful:", response.data);
+      fetchData();
+      notifySuccess("Item deleted successfully");
+    } catch (error) {
+      console.error("Error deleting data:", error);
+      notifyError("Error deleting item");
     }
   };
 
   const renderEditForm = () => {
-    switch (editItem.category) {
-      case "MENU":
-        return (
-          <Box>
-            <Input
-              placeholder="Edit Ingredients (comma-separated)"
-              value={editItem.ingredients.join(", ")}
-              onChange={(e) =>
-                setEditItem({
-                  ...editItem,
-                  ingredients: e.target.value.split(", "),
-                })
-              }
-            />
-          </Box>
-        );
-
-      case "DINING":
-        return (
-          <Box>
-            <Input
-              placeholder="Edit Capacity"
-              value={editItem.capacity}
-              onChange={(e) =>
-                setEditItem({ ...editItem, capacity: e.target.value })
-              }
-            />
-            <Input
-              placeholder="Edit Amenities (comma-separated)"
-              value={editItem.amenities.join(", ")}
-              onChange={(e) =>
-                setEditItem({
-                  ...editItem,
-                  amenities: e.target.value.split(", "),
-                })
-              }
-            />
-          </Box>
-        );
-
-      case "DEALS":
-        return (
-          <Box>
-            <Input
-              placeholder="Edit Valid Days (comma-separated)"
-              value={editItem.valid_days.join(", ")}
-              onChange={(e) =>
-                setEditItem({
-                  ...editItem,
-                  valid_days: e.target.value.split(", "),
-                })
-              }
-            />
-            <Input
-              placeholder="Edit Discount Percentage"
-              value={editItem.discount_percentage}
-              onChange={(e) =>
-                setEditItem({
-                  ...editItem,
-                  discount_percentage: e.target.value,
-                })
-              }
-            />
-          </Box>
-        );
-
-      case "SPECIALS":
-        return (
-          <Box>
-            <Input
-              placeholder="Edit Courses (comma-separated)"
-              value={editItem.courses.join(", ")}
-              onChange={(e) =>
-                setEditItem({
-                  ...editItem,
-                  courses: e.target.value.split(", "),
-                })
-              }
-            />
-          </Box>
-        );
-
-      case "EVENTS":
-        return (
-          <Box>
-            <Input
-              type="date"
-              placeholder="Edit Date"
-              value={editItem.date}
-              onChange={(e) =>
-                setEditItem({ ...editItem, date: e.target.value })
-              }
-            />
-            <Input
-              type="time"
-              placeholder="Edit Time"
-              value={editItem.time}
-              onChange={(e) =>
-                setEditItem({ ...editItem, time: e.target.value })
-              }
-            />
-            <Input
-              placeholder="Edit Location"
-              value={editItem.location}
-              onChange={(e) =>
-                setEditItem({ ...editItem, location: e.target.value })
-              }
-            />
-          </Box>
-        );
-
-      default:
-        return null;
-    }
+    // ... (Previous renderEditForm logic)
   };
 
   if (loading) {
@@ -226,11 +189,35 @@ const AdminItemList = () => {
     );
   }
 
+  const filteredItems =
+    selectedCategory === "all"
+      ? items
+      : items.filter((item) => item.category === selectedCategory);
+
   return (
     <Box w={"100%"}>
       <Heading>Items</Heading>
-      <SimpleGrid columns={2} spacing={2} mt={4}>
-        {items.map((item) => (
+
+      <Flex justify="center">
+        <Select
+          placeholder="Select Category"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+          mt={4}
+          mb={2}
+          w={"30%"}
+        >
+          <option value="all">All Categories</option>
+          <option value="DINING">Dining</option>
+          <option value="DEALS">Deals</option>
+          <option value="SPECIALS">Specials</option>
+          <option value="EVENTS">Events</option>
+          <option value="MENU">Menu</option>
+        </Select>
+      </Flex>
+
+      <SimpleGrid columns={2} spacing={2} mt={2}>
+        {filteredItems.map((item) => (
           <Box
             w={"100%"}
             key={item._id}
@@ -277,7 +264,6 @@ const AdminItemList = () => {
               )}
             </Box>
 
-            {/* Move buttons to the side */}
             <VStack ml="auto">
               <Tooltip label="Edit">
                 <Button
@@ -291,7 +277,12 @@ const AdminItemList = () => {
               </Tooltip>
 
               <Tooltip label="Delete">
-                <Button width="80%" bg="white" leftIcon={<FiTrash />}>
+                <Button
+                  width="80%"
+                  bg="white"
+                  leftIcon={<FiTrash />}
+                  onClick={() => handleDelete(item._id)}
+                >
                   Delete
                 </Button>
               </Tooltip>
@@ -300,16 +291,15 @@ const AdminItemList = () => {
         ))}
       </SimpleGrid>
 
-      {/* Modal for editing */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Edit Item</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {/* Form for editing */}
             {editItem && (
               <Box>
+                <Text>Name:</Text>
                 <Input
                   placeholder="Edit Name"
                   value={editItem.name}
@@ -317,6 +307,7 @@ const AdminItemList = () => {
                     setEditItem({ ...editItem, name: e.target.value })
                   }
                 />
+                <Text>Description:</Text>
                 <Input
                   placeholder="Edit Description"
                   value={editItem.description}
@@ -324,6 +315,7 @@ const AdminItemList = () => {
                     setEditItem({ ...editItem, description: e.target.value })
                   }
                 />
+                <Text>Price:</Text>
                 <Input
                   placeholder="Edit Price"
                   value={editItem.price}

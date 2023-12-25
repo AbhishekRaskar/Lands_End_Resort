@@ -30,12 +30,14 @@ import AdminList from "../Pages/AdminList";
 import AdminDashboard from "../Pages/AdminDashboard";
 import AdminRegister from "../Pages/AdminRegister";
 import AdminItemList from "./AdminItemList";
+import AdminAddItem from "./AdminAddItem";
 
 const AdminSidebar = () => {
   const [showAdminList, setShowAdminList] = useState(true);
   const [showDashboard, setShowDashboard] = useState(true);
   const [showNewAdmin, setShowNewAdmin] = useState(true);
   const [showItem, setShowItem] = useState(true);
+  const [addItem, setAddItem] = useState(true);
 
   useEffect(() => {
     handleToggleDashboard();
@@ -46,6 +48,7 @@ const AdminSidebar = () => {
     setShowNewAdmin(false);
     setShowDashboard(false);
     setShowItem(false);
+    setAddItem(false);
   };
 
   const handleToggleDashboard = () => {
@@ -53,6 +56,7 @@ const AdminSidebar = () => {
     setShowAdminList(false);
     setShowNewAdmin(false);
     setShowItem(false);
+    setAddItem(false);
   };
 
   const handleToggleNewAdmin = () => {
@@ -60,6 +64,7 @@ const AdminSidebar = () => {
     setShowAdminList(false);
     setShowDashboard(false);
     setShowItem(false);
+    setAddItem(false);
   };
 
   const handleToggleShowItem = () => {
@@ -67,7 +72,17 @@ const AdminSidebar = () => {
     setShowAdminList(false);
     setShowNewAdmin(false);
     setShowDashboard(false);
+    setAddItem(false);
   };
+
+  const handleToggleAddItem = () => {
+    setAddItem(true);
+    setShowItem(false);
+    setShowAdminList(false);
+    setShowNewAdmin(false);
+    setShowDashboard(false);
+  };
+
   return (
     <div style={{ position: "relative" }}>
       <Flex>
@@ -107,7 +122,12 @@ const AdminSidebar = () => {
                 Items List
               </Button>
 
-              <Button bg="white" width="100%" leftIcon={<FiEdit2 />}>
+              <Button
+                bg="white"
+                width="100%"
+                onClick={handleToggleAddItem}
+                leftIcon={<FiEdit2 />}
+              >
                 Add New Item
               </Button>
             </VStack>
@@ -162,6 +182,7 @@ const AdminSidebar = () => {
           {showAdminList && <AdminList />}
           {showNewAdmin && <AdminRegister />}
           {showItem && <AdminItemList />}
+          {addItem && <AdminAddItem />}
         </Box>
 
         <Flex
