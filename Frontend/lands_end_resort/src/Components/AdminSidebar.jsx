@@ -31,6 +31,7 @@ import AdminDashboard from "../Pages/AdminDashboard";
 import AdminRegister from "../Pages/AdminRegister";
 import AdminItemList from "./AdminItemList";
 import AdminAddItem from "./AdminAddItem";
+import AuthModal from "./AuthModal";
 
 const AdminSidebar = () => {
   const [showAdminList, setShowAdminList] = useState(true);
@@ -38,9 +39,17 @@ const AdminSidebar = () => {
   const [showNewAdmin, setShowNewAdmin] = useState(true);
   const [showItem, setShowItem] = useState(true);
   const [addItem, setAddItem] = useState(true);
-
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authModalType, setAuthModalType] = useState("login"); // Default to login
   useEffect(() => {
-    handleToggleDashboard();
+    // Check for adminToken in local storage
+    const adminToken = localStorage.getItem("adminToken");
+    if (!adminToken) {
+      // If not present, open the AuthModal for login
+      setIsAuthModalOpen(true);
+    } else {
+      handleToggleDashboard(); // If token is present, show the dashboard
+    }
   }, []);
 
   const handleToggleAdminList = () => {
@@ -81,6 +90,15 @@ const AdminSidebar = () => {
     setShowAdminList(false);
     setShowNewAdmin(false);
     setShowDashboard(false);
+  };
+
+  const handleAuthModalClose = () => {
+    setIsAuthModalOpen(false);
+  };
+
+  const handleToggleAuthModal = (type) => {
+    setAuthModalType(type);
+    setIsAuthModalOpen(true);
   };
 
   return (
@@ -184,7 +202,11 @@ const AdminSidebar = () => {
           {showItem && <AdminItemList />}
           {addItem && <AdminAddItem />}
         </Box>
-
+        <AuthModal
+          isOpen={isAuthModalOpen}
+          onClose={handleAuthModalClose}
+          type={authModalType}
+        />
         <Flex
           bg="white"
           height="80px"

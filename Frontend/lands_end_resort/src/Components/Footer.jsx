@@ -4,6 +4,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { BsInstagram, BsTwitter } from "react-icons/bs";
 import { ImYoutube } from "react-icons/im";
 import { PhonefooterList } from "./PhonefooterList";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -79,6 +80,16 @@ export const Footer = () => {
                 </Text>
                 <ListItem>Partner With us</ListItem>
                 <ListItem>Apps for you</ListItem>
+                <Link to="/admin">
+                  <Text
+                    fontWeight={"bold"}
+                    _hover={{
+                      cursor: "pointer",
+                    }}
+                  >
+                    <ListItem>Admin Login</ListItem>
+                  </Text>
+                </Link>
               </UnorderedList>
 
               <UnorderedList

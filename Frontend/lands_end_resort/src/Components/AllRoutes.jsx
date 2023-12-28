@@ -12,6 +12,8 @@ import Specials from "../Pages/Specials";
 import Events from "../Pages/Events";
 import Payment from "../Pages/Payment";
 import AdminSidebar from "./AdminSidebar";
+import AdminSignup from "../Pages/AdminSignup";
+import AdminLogin from "../Pages/AdminLogin";
 
 const AllRoutes = () => {
   return (
@@ -20,7 +22,6 @@ const AllRoutes = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/dinings" element={<Dining />} />
         <Route path="/menus" element={<Menu />} />
-        {/* <Route path="/singleproduct/:id" element={<SingleMenu />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/deals" element={<Deals />} />
@@ -29,6 +30,8 @@ const AllRoutes = () => {
         <Route path="/events" element={<Events />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/admin" element={<AdminSidebar />} />
+        <Route path="/admin-signup" element={<AdminSignup />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
       </Routes>
     </div>
   );
