@@ -152,6 +152,7 @@ const AdminSignup = () => {
                 </Stack>
               </VStack>
               <br />
+              
               <Text textAlign="center">
                 Already have an account?
                 <br />
@@ -171,7 +172,7 @@ const AdminSignup = () => {
         </ModalBody>
       </ModalContent>
     </Modal>
-    
+
   );
 };
 
