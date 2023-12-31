@@ -17,6 +17,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
+  useToast,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,7 +25,7 @@ import { userSignup } from "../Redux/RegisterReducer/action";
 
 const Signup = () => {
   const [isOpen, setIsOpen] = useState(true);
-
+  const toast = useToast();
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
@@ -52,6 +53,14 @@ const Signup = () => {
       // Check if the registration was successful
       if (response.success) {
         setIsOpen(false);
+        toast({
+          title: "Signup Successful",
+          description: "You have successfully signed up!",
+          status: "success",
+          position: "top",
+          duration: 5000,
+          isClosable: true,
+        });
         window.location.href = "/login"; // Navigate to the login page
       }
     } catch (error) {

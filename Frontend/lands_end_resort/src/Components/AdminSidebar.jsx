@@ -13,19 +13,9 @@ import {
   Image,
   IconButton,
 } from "@chakra-ui/react";
-import {
-  FiHome,
-  FiTrendingUp,
-  FiList,
-  FiEdit2,
-  FiUsers,
-  FiUserPlus,
-  FiMail,
-  FiMessageSquare,
-  FiFile,
-} from "react-icons/fi";
+import { FiHome, FiList, FiEdit2, FiUsers, FiUserPlus } from "react-icons/fi";
 import Logo from "../Images/Logo2.png";
-import { FaBell, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import AdminList from "../Pages/AdminList";
 import AdminDashboard from "../Pages/AdminDashboard";
 import AdminRegister from "../Pages/AdminRegister";
@@ -34,108 +24,79 @@ import AdminAddItem from "./AdminAddItem";
 import AuthModal from "./AuthModal";
 
 const AdminSidebar = () => {
-  const [showAdminList, setShowAdminList] = useState(true);
-  const [showDashboard, setShowDashboard] = useState(true);
-  const [showNewAdmin, setShowNewAdmin] = useState(true);
-  const [showItem, setShowItem] = useState(true);
-  const [addItem, setAddItem] = useState(true);
+  // State variables
+  const [activePage, setActivePage] = useState("dashboard");
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [authModalType, setAuthModalType] = useState("login"); // Default to login
+  const [authModalType, setAuthModalType] = useState("login");
+
+  // Function to handle page toggling
+  const handleTogglePage = (page) => {
+    setActivePage(page);
+  };
+
+  // Effect to check for admin token on mount
   useEffect(() => {
-    // Check for adminToken in local storage
     const adminToken = localStorage.getItem("adminToken");
     if (!adminToken) {
-      // If not present, open the AuthModal for login
       setIsAuthModalOpen(true);
     } else {
-      handleToggleDashboard(); // If token is present, show the dashboard
+      handleTogglePage("dashboard");
     }
   }, []);
 
-  const handleToggleAdminList = () => {
-    setShowAdminList(true);
-    setShowNewAdmin(false);
-    setShowDashboard(false);
-    setShowItem(false);
-    setAddItem(false);
-  };
-
-  const handleToggleDashboard = () => {
-    setShowDashboard(true);
-    setShowAdminList(false);
-    setShowNewAdmin(false);
-    setShowItem(false);
-    setAddItem(false);
-  };
-
-  const handleToggleNewAdmin = () => {
-    setShowNewAdmin(true);
-    setShowAdminList(false);
-    setShowDashboard(false);
-    setShowItem(false);
-    setAddItem(false);
-  };
-
-  const handleToggleShowItem = () => {
-    setShowItem(true);
-    setShowAdminList(false);
-    setShowNewAdmin(false);
-    setShowDashboard(false);
-    setAddItem(false);
-  };
-
-  const handleToggleAddItem = () => {
-    setAddItem(true);
-    setShowItem(false);
-    setShowAdminList(false);
-    setShowNewAdmin(false);
-    setShowDashboard(false);
-  };
-
+  // Function to close the auth modal
   const handleAuthModalClose = () => {
     setIsAuthModalOpen(false);
   };
 
+  // Function to open the auth modal with a specific type (login/register)
   const handleToggleAuthModal = (type) => {
     setAuthModalType(type);
     setIsAuthModalOpen(true);
   };
 
+  const handleLogout = () => {
+    console.log("hIIIIIIIIIIIIIIIIIIIIIII");
+    // Clear localStorage
+    localStorage.removeItem("adminToken");
+
+    // Navigate to home page
+    window.location.href = "/";
+  };
+  // JSX structure of the component
   return (
     <div style={{ position: "relative" }}>
       <Flex>
+        {/* Sidebar */}
         <Box bg="white" width="25%" height="100vh" position="fixed">
           <Box width="55%" margin="auto">
             <Image src={Logo} alt="Logo" width={220} />
           </Box>
 
           <VStack p="10">
-            <Text color="gray.500" width="90%">
-              Dashboard
-              <hr />
-            </Text>
-
+            {/* Home button */}
             <VStack width="90%">
               <Button
                 bg="white"
                 width="100%"
-                onClick={handleToggleDashboard}
+                onClick={() => handleTogglePage("dashboard")}
                 leftIcon={<FiHome />}
+                // Highlight the Home button if on the dashboard page
+                color={activePage === "dashboard" ? "#DC143C" : "black"}
               >
                 Home
               </Button>
             </VStack>
 
-            <Text color="gray.500" width="90%">
-              All Menu
-              <hr />
-            </Text>
+            {/* Items List and Add New Item buttons */}
             <VStack width="90%">
               <Button
                 bg="white"
                 width="100%"
-                onClick={handleToggleShowItem}
+                onClick={() => handleTogglePage("showItem")}
                 leftIcon={<FiList />}
+                // Highlight the Items List button if on the showItem page
+                color={activePage === "showItem" ? "#DC143C" : "black"}
               >
                 Items List
               </Button>
@@ -143,23 +104,24 @@ const AdminSidebar = () => {
               <Button
                 bg="white"
                 width="100%"
-                onClick={handleToggleAddItem}
+                onClick={() => handleTogglePage("addItem")}
                 leftIcon={<FiEdit2 />}
+                // Highlight the Add New Item button if on the addItem page
+                color={activePage === "addItem" ? "#DC143C" : "black"}
               >
                 Add New Item
               </Button>
             </VStack>
 
-            <Text color="gray.500" width="90%">
-              Admin Section
-              <hr />
-            </Text>
+            {/* Admins and Register Admins buttons */}
             <VStack width="90%">
               <Button
                 bg="white"
                 width="100%"
-                onClick={handleToggleAdminList}
+                onClick={() => handleTogglePage("adminList")}
                 leftIcon={<FiUsers />}
+                // Highlight the Admins button if on the adminList page
+                color={activePage === "adminList" ? "#DC143C" : "black"}
               >
                 Admins
               </Button>
@@ -167,46 +129,36 @@ const AdminSidebar = () => {
               <Button
                 bg="white"
                 width="100%"
-                onClick={handleToggleNewAdmin}
+                onClick={() => handleTogglePage("newAdmin")}
                 leftIcon={<FiUserPlus />}
+                // Highlight the Register Admins button if on the newAdmin page
+                color={activePage === "newAdmin" ? "#DC143C" : "black"}
               >
                 Register Admins
-              </Button>
-            </VStack>
-
-            <Text color="gray.500" width="90%">
-              Connect
-              <hr />
-            </Text>
-
-            <VStack width="90%">
-              <Button bg="white" width="100%" leftIcon={<FiMail />}>
-                Mail
-              </Button>
-
-              <Button bg="white" width="100%" leftIcon={<FiFile />}>
-                Feedback
-              </Button>
-              <Button bg="white" width="100%" leftIcon={<FiMessageSquare />}>
-                Messages
               </Button>
             </VStack>
           </VStack>
         </Box>
 
+        {/* Main Content */}
         <Box width="70%" position={"absolute"} top="10%" right="2.5%" mt="90px">
-          {/* Render your components based on the route */}
-          {showDashboard && <AdminDashboard />}
-          {showAdminList && <AdminList />}
-          {showNewAdmin && <AdminRegister />}
-          {showItem && <AdminItemList />}
-          {addItem && <AdminAddItem />}
+          {activePage === "dashboard" && <AdminDashboard />}
+          {activePage === "adminList" && <AdminList />}
+          {activePage === "newAdmin" && <AdminRegister />}
+          {activePage === "showItem" && <AdminItemList />}
+          {activePage === "addItem" && <AdminAddItem />}
         </Box>
-        <AuthModal
-          isOpen={isAuthModalOpen}
-          onClose={handleAuthModalClose}
-          type={authModalType}
-        />
+
+        {/* Auth Modal */}
+        {isAuthModalOpen && (
+          <AuthModal
+            isOpen={isAuthModalOpen}
+            onClose={handleAuthModalClose}
+            type={authModalType}
+          />
+        )}
+
+        {/* Footer */}
         <Flex
           bg="white"
           height="80px"
@@ -239,9 +191,8 @@ const AdminSidebar = () => {
               </Flex>
             </MenuButton>
             <MenuList>
-              <MenuGroup title="Profile">
-                <MenuItem>Admins</MenuItem>
-                <MenuItem>Logout </MenuItem>
+              <MenuGroup>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </MenuGroup>
             </MenuList>
           </Menu>

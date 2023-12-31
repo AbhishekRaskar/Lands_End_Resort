@@ -1,5 +1,10 @@
 import React from "react";
-import { Modal, ModalOverlay, ModalContent, ModalCloseButton } from "@chakra-ui/react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import AdminLogin from "../Pages/AdminLogin";
 import AdminSignup from "../Pages/AdminSignup";
 
@@ -10,7 +15,9 @@ const AuthModal = ({ isOpen, onClose, type }) => {
       <ModalContent>
         <ModalCloseButton />
         {type === "login" && <AdminLogin isOpen={isOpen} onClose={onClose} />}
-        {type === "register" && <AdminSignup />}
+        {type === "register" && (
+          <AdminSignup isOpen={isOpen} onClose={onClose} />
+        )}
       </ModalContent>
     </Modal>
   );

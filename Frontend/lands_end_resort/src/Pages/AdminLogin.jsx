@@ -38,9 +38,9 @@ const AdminLogin = ({ isOpen, onClose }) => {
         "https://land-end-resort.onrender.com/admin/admin-login",
         adminData
       );
-
-      if (adminLoginResponse.data.success) {
-        localStorage.setItem("adminToken", adminLoginResponse.data.payload);
+      console.log(adminLoginResponse, "adminLoginResponse");
+      if (adminLoginResponse.status === 200) {
+        localStorage.setItem("adminToken", adminLoginResponse.data.token);
         navigate("/admin");
         toast({
           position: "top",
@@ -70,7 +70,7 @@ const AdminLogin = ({ isOpen, onClose }) => {
       });
     }
   };
-
+  // console.log("ABHI")
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />

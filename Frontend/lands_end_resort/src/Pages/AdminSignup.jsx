@@ -16,12 +16,14 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
+  useToast,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AdminSignup = () => {
   const [isOpen, setIsOpen] = useState(true);
-
+  const toast = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     img: "",
@@ -53,9 +55,17 @@ const AdminSignup = () => {
       console.log("Server response:", response);
 
       // Check if the registration was successful
-      if (response.data.success) {
+      if (response.status === 200) {
         setIsOpen(false);
-        window.location.href = "/login"; // Navigate to the login page
+        navigate("/admin"); // Navigate to the login page
+        // Show success toast
+        toast({
+          title: "Admin Registered",
+          description: "You have successfully registered as an admin.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -152,27 +162,25 @@ const AdminSignup = () => {
                 </Stack>
               </VStack>
               <br />
-              
-              <Text textAlign="center">
-                Already have an account?
-                <br />
-                <Link
-                  style={{
-                    textDecoration: "underline",
-                    textDecorationColor: "#DC143C",
-                    color: "#DC143C",
-                  }}
-                  to="/admin-login"
-                >
-                  Login
-                </Link>
-              </Text>
             </form>
+            <Text textAlign="center">
+              Already have an account?
+              <br />
+              <Link
+                to="/admin"
+                style={{
+                  textDecoration: "underline",
+                  textDecorationColor: "#DC143C",
+                  color: "#DC143C",
+                }}
+              >
+                Login
+              </Link>
+            </Text>
           </Box>
         </ModalBody>
       </ModalContent>
     </Modal>
-
   );
 };
 
