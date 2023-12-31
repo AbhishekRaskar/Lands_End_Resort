@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Box,
   Button,
@@ -45,50 +45,87 @@ const Payment = () => {
     setAddress(event.target.value);
   };
 
-  const handlePayNow = () => {
+  // Inside the card payment section
+  const cardNumberRef = useRef(null);
+  const cardHolderNameRef = useRef(null);
+  const expiryDateRef = useRef(null);
+  const cvvRef = useRef(null);
+
+  // Inside the UPI payment section
+  const upiIdRef = useRef(null);
+
+  const validatePayment = () => {
     if (!address && paymentMethod !== "cash") {
       setError("Please provide your address.");
-      return;
+      return false;
     }
+
+    console.log("Address is valid...");
 
     if (paymentMethod === "upi") {
       const validPrefixes = ["@oksbi", "@axisbank", "@icici"];
       const isValidPrefix = validPrefixes.includes(selectedPrefix);
 
-      if (!isValidPrefix) {
-        setError("Please select a valid prefix for your UPI ID.");
-        return;
+      if (!isValidPrefix || !upiId) {
+        setError("Please enter a valid UPI ID with a valid prefix.");
+        return false;
       }
     }
 
-    // Perform the payment logic here
-    // ...
+    if (paymentMethod === "card") {
+      // Add validation for card-related fields
+      const cardNumber = cardNumberRef.current.value;
+      const cardHolderName = cardHolderNameRef.current.value;
+      const expiryDate = expiryDateRef.current.value;
+      const cvv = cvvRef.current.value;
 
-    // Show toast based on payment method
-    if (paymentMethod === "cash") {
-      toast({
-        position: "top-left",
-        title: "Order Placed",
-        description: "Your order has been placed successfully.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        position: "top-left",
-        title: "Payment Successful",
-        description: "Your payment has been processed successfully.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
+      if (!cardNumber || !cardHolderName || !expiryDate || !cvv) {
+        setError("Please fill in all card details.");
+        return false;
+      }
     }
 
-    // Reset error after successful payment
-    setError("");
+    return true;
+  };
 
-    // navigate("/");
+  const handlePayNow = () => {
+    console.log("Payment Method:", paymentMethod);
+
+    if (validatePayment()) {
+      console.log("Payment method is valid...");
+
+      // Show toast based on payment method
+      if (paymentMethod === "cash") {
+        console.log("Processing cash payment...");
+
+        toast({
+          position: "top-left",
+          title: "Order Placed",
+          description: "Your order has been placed successfully.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        console.log("Processing non-cash payment...");
+        toast({
+          position: "top-left",
+          title: "Payment Successful",
+          description:
+            "Your payment has been processed successfully. Redirecting to the home page...",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+
+      // Uncomment the line below to navigate to the home page after successful payment
+      console.log("Navigating...");
+      navigate("/");
+
+      // Reset error after successful payment
+      setError("");
+    }
   };
 
   return (
@@ -125,11 +162,13 @@ const Payment = () => {
             type="text"
             placeholder="Card Number"
             focusBorderColor="#DC143C"
+            ref={cardNumberRef}
           />
           <Input
             type="text"
             placeholder="Card Holder Name"
             focusBorderColor="#DC143C"
+            ref={cardHolderNameRef}
           />
           <Stack direction="row" spacing={4}>
             <Input
@@ -137,12 +176,14 @@ const Payment = () => {
               placeholder="MM/YY"
               flex="1"
               focusBorderColor="#DC143C"
+              ref={expiryDateRef}
             />
             <Input
               type="text"
               placeholder="CVV"
               flex="1"
               focusBorderColor="#DC143C"
+              ref={cvvRef}
             />
           </Stack>
         </Stack>
@@ -156,6 +197,7 @@ const Payment = () => {
             value={upiId}
             onChange={handleUpiIdChange}
             focusBorderColor="#DC143C"
+            ref={upiIdRef}
           />
           <Select
             value={selectedPrefix}
