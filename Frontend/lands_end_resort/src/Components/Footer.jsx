@@ -7,6 +7,12 @@ import { PhonefooterList } from "./PhonefooterList";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
+  const iconStyle = {
+    fontSize: 25,
+    transition: "transform 0.3s ease-in-out",
+    cursor: "pointer",
+  };
+
   return (
     <Box pos={"static"}>
       <Box w={"100%"} display={{ base: "none", lg: "block" }}>
@@ -168,7 +174,10 @@ export const Footer = () => {
               fontSize={25}
               justifyContent={"center"}
             >
-              <FaFacebookF /> <BsTwitter /> <BsInstagram /> <ImYoutube />{" "}
+              <FaFacebookF style={iconStyle} />
+              <BsTwitter style={iconStyle} />
+              <BsInstagram style={iconStyle} />
+              <ImYoutube style={iconStyle} />
             </Box>
           </Box>
         </Box>

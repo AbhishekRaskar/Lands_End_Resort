@@ -263,7 +263,7 @@ const Homepage = () => {
         <br />
         <SimpleGrid columns={{ sm: 2, md: 4, lg: 6 }} spacing={4}>
           <Center flexDirection="column" textAlign="center">
-            <Box>
+            <Box {...boxStyles}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -273,7 +273,7 @@ const Homepage = () => {
             </Box>
           </Center>
           <Center flexDirection="column" textAlign="center">
-            <Box>
+            <Box {...boxStyles}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -283,7 +283,7 @@ const Homepage = () => {
             </Box>
           </Center>
           <Center flexDirection="column" textAlign="center">
-            <Box>
+            <Box {...boxStyles}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -293,7 +293,7 @@ const Homepage = () => {
             </Box>
           </Center>
           <Center flexDirection="column" textAlign="center">
-            <Box>
+            <Box {...boxStyles}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -303,7 +303,7 @@ const Homepage = () => {
             </Box>
           </Center>
           <Center flexDirection="column" textAlign="center">
-            <Box>
+            <Box {...boxStyles}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -313,7 +313,7 @@ const Homepage = () => {
             </Box>
           </Center>
           <Center flexDirection="column" textAlign="center">
-            <Box>
+            <Box {...boxStyles}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -419,7 +419,7 @@ const Homepage = () => {
       {/* sixth */}
       <Box w={"70%"} margin={"auto"}>
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={0}>
-          <Box>
+          <Box {...boxStyles}>
             <Image
               w={{ sm: "80%", md: "90%", lg: "80%" }}
               src="https://b.zmtcdn.com/data/o2_assets/f773629053b24263e69f601925790f301680693809.png"
