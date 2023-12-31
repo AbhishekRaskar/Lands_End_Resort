@@ -32,6 +32,7 @@ const Dining = () => {
         </Text>
       </Heading>
       <br />
+      
       {loading ? (
          <Spinner size="xl" color="#DC143C" />
       ) : (
