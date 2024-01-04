@@ -23,6 +23,9 @@ const Dining = () => {
     getData();
   }, []);
 
+
+  
+
   return (
     <Box w={"90%"} margin={"auto"} p={4}>
       <Heading fontWeight="bold" mb="2">
