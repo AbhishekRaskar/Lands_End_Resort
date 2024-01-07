@@ -97,6 +97,10 @@ cartRouter.post("/add-to-cart/:menuID", async (req, res) => {
     }
 });
 
+
+
+
+
 // Remove a menu item from the cart
 cartRouter.delete("/remove-from-cart/:menuID", async (req, res) => {
     // Extract the menuID from the request parameters
