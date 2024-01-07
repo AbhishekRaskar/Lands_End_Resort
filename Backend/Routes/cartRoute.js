@@ -20,6 +20,10 @@ cartRouter.get("/", async (req, res) => {
     }
 });
 
+
+
+
+
 // Add a menu item to the cart
 cartRouter.post("/add-to-cart/:menuID", async (req, res) => {
     // Extract the menuID from the request parameters
