@@ -20,6 +20,7 @@ const EventCard = ({ eventData }) => {
 
   // Function to handle "Add To Cart" button click
   const handleAddToCart = async () => {
+    
     const userToken = localStorage.getItem("token");
 
     if (!userToken) {
