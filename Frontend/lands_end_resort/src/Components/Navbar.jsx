@@ -39,9 +39,13 @@ const deactive = { color: "black", textDecoration: "none" };
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   const isAuth = useSelector((store) => store.LoginReducer.isAuth);
+
   const userName = useSelector((store) => store.LoginReducer.userName);
   // console.log(isAuth);
+
+
   const dispatch = useDispatch();
 
   const toast = useToast();
