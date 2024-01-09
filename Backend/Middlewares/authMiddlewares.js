@@ -7,7 +7,6 @@ const auth = (req, res, next) => {
     if (token) {
         try {
             const decoded = jwt.verify(token, process.env.secret);
-
             if (decoded) {
                 console.log(decoded);
                 
