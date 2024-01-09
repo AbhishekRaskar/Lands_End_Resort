@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 // schema
 const adminSchema = mongoose.Schema(
   {
@@ -14,6 +15,7 @@ const adminSchema = mongoose.Schema(
     versionKey: false,
   }
 );
+
 
 // model
 const AdminModel = mongoose.model("admin", adminSchema);
