@@ -2,7 +2,7 @@
 
 Welcome to Land's End Resort, where luxury meets nature. Our project is designed to offer users a seamless experience as they explore the diverse offerings on our website. From tantalizing menus to exclusive dining experiences, special promotions, and upcoming events, users can immerse themselves in the unique world of Land's End Resort.
 
-**App Deployed Link:** [Pet Connects App](https://lands-end-resort.vercel.app/)
+**App Deployed Link:** [Land's End Resort App](https://lands-end-resort.vercel.app/)
 
 ## Key Features
 
