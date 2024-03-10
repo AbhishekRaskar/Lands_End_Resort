@@ -127,7 +127,7 @@ React Chart: Utilized for visualizing and managing data in the cart system effic
 
 ### Explore the Website:
 
-Visit http:&nbsp;[Pet Connects App](https://lands-end-resort.vercel.app/) to explore the user interface.
+Visit http:&nbsp;[Land's End Resort App](https://lands-end-resort.vercel.app/) to explore the user interface.
 For admin features, login using the admin credentials.
 
 Thank you for choosing Land's End Resort, where luxury meets nature. We are delighted that you have embarked on a virtual journey with us. Our commitment is to offer you a seamless and immersive experience as you navigate through our website. Whether you are exploring our diverse menu, planning a memorable dining experience, discovering special promotions, or staying informed about upcoming events, our goal is to make your online visit as enjoyable as a stay at our resort.
